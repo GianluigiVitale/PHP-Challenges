@@ -30,3 +30,6 @@ _The challenges are organized in a chronological order_
 22. Rock Paper Scissors!
 23. Expressions Matter
 24. Removing Elements
+25. Number of characters
+26. Is the string uppercase?
+27. Find the Difference in Age between Oldest and Youngest Family Members

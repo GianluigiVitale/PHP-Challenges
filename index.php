@@ -374,7 +374,7 @@
 // $val1 = 4;
 // $val2 = 7;
 //
-// $funzione = centuryFromYear($year);
+// $funzione = basicOp($op, $val1, $val2);
 // echo '<pre>';
 // print_r($funzione);
 // echo '</pre';
@@ -718,6 +718,113 @@
 //     }
 //
 //     return $new_array;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 25. Number of characters
+
+        >Create a function called that accepts 2 string arguments
+            and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+            If no occurrences can be found, a count of 0 should be returned.
+        EXAMPLE:
+            strCount('Hello', 'o') // => 1
+            strCount('Hello', 'l') // => 2
+            strCount('', 'z')      // => 0
+        NOTES:
+            The first argument can be an empty string
+            The second string argument will always be of length 1
+    */
+
+// $str = 'Hello';
+// $letter = 'o';
+//
+// $funzione = strCount($str, $letter);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function strCount($str, $letter) {
+//     return substr_count($str, $letter);
+// }
+// function strCount($str, $letter) {  // another way
+//     $count = 0;
+//     for ($i = 0; $i < strlen($str); $i++) {
+//         if ($str[$i] == $letter) {
+//             $count++;
+//         }
+//     }
+//
+//     return $count;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 26. Is the string uppercase?
+
+        >Create a method is_uppercase() to see whether the string is ALL CAPS. For example:
+        EXAMPLE:
+            is_uppercase("c") == false
+            is_uppercase("C") == true
+            is_uppercase("hello I AM DONALD") == false
+            is_uppercase("HELLO I AM DONALD") == true
+            is_uppercase("ACSKLDFJSgSKLDFJSKLDFJ") == false
+            is_uppercase("ACSKLDFJSGSKLDFJSKLDFJ") == true
+        NOTES:
+            In this Kata, a string is said to be in ALL CAPS whenever it does not contain any lowercase letter
+             so any string containing no letters at all is trivially considered to be in ALL CAPS.
+    */
+
+// $str = 'Hello';
+//
+// $funzione = is_uppercase($str);
+// echo $funzione ? 'true' : 'false';  // to print a boolean value
+//
+//
+// function is_uppercase($str) {
+//     if (strtoupper($str) == $str) {
+//         return true;
+//     }
+//     return false;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 27. Find the Difference in Age between Oldest and Youngest Family Members
+
+        >At the annual family gathering, the family likes to find the oldest living family member’s age
+         and the youngest family member’s age and calculate the difference between them.
+         You will be given an array of all the family members' ages, in any order.
+         The ages will be given in whole numbers, so a baby of 5 months, will have an ascribed ‘age’ of 0.
+         Return a new array (a tuple in Python) with [youngest age, oldest age, difference between the youngest and oldest age].
+        EXAMPLE:
+        NOTES:
+    */
+
+// $ages = [82, 15, 6, 38, 35];
+//
+// $funzione = differenceInAges($ages);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function differenceInAges($ages) {
+//     $youngest = $ages[0];
+//     $oldest = $ages[0];
+//     $difference_age = 0;
+//
+//     foreach ($ages as $key => $value) {
+//         if ($value < $youngest) {
+//             $youngest = $value;
+//         } elseif ($value > $oldest) {
+//             $oldest = $value;
+//         }
+//     }
+//     $difference_age = $oldest - $youngest;
+//
+//     return [$youngest, $oldest, $difference_age];
 // }
 //-----------------------------------------------------------------------------------------------------
 
