@@ -11,7 +11,9 @@
 // $b = 8;
 //
 // $funzione = multiply($a, $b);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function multiply($a, $b) {
 //     return $a * $b;
@@ -30,7 +32,9 @@
 // $n = 2;
 //
 // $funzione = even_or_odd($n);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function even_or_odd(int $n): string {
 //     if ($n % 2 == 0) {
@@ -54,7 +58,9 @@
 // $arr = [-1, 2, 3, 4, -5];
 //
 // $funzione = positive_sum($arr);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function positive_sum($arr) {
 //     if (empty($arr)) {
@@ -86,7 +92,9 @@
 // $n = 14;
 //
 // $funzione = opposite($n);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function opposite($n) {
 //     return $n * -1;
@@ -105,7 +113,9 @@
 // $s = 'place';
 //
 // $funzione = remove_char($s);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function remove_char(string $s): string {
 //     return substr($s, 1, -1);
@@ -130,7 +140,9 @@
 // $num = -20;
 //
 // $funzione = makeNegative($num);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function makeNegative(float $num) : float {
 //     if ($num <= 0) {
@@ -155,7 +167,9 @@
 // $str = '*';
 //
 // $funzione = repeatStr($n, $str);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function repeatStr($n, $str)
 // {
@@ -179,7 +193,9 @@
 // $s = '8 j 8   mBliB8g  imjB8B8  jl  B';
 //
 // $funzione = no_space($s);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function no_space(string $s): string {
 //     return str_replace(' ', '', $s);
@@ -200,7 +216,9 @@
 // $arr = [3, 5, 10, 1, 4, 55];
 //
 // $funzione = smallestInteger($arr);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function smallestInteger($arr) {
 //     $smallest_number = $arr[0];
@@ -231,7 +249,9 @@
 // $n = 8;
 //
 // $funzione = summation($n);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function summation($n) {
 //     $sum = 0;
@@ -255,7 +275,9 @@
 // $bool = true;
 //
 // $funzione = boolToWord($bool);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 // function boolToWord($bool) {
 //     if ($bool === true) {
@@ -277,7 +299,9 @@
 // $str = 'world';
 //
 // $funzione = solution($str);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function solution($str) {
@@ -311,7 +335,9 @@
 // $year = 50;
 //
 // $funzione = centuryFromYear($year);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function centuryFromYear($year)
@@ -349,7 +375,9 @@
 // $val2 = 7;
 //
 // $funzione = centuryFromYear($year);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function basicOp($op, $val1, $val2)
@@ -382,7 +410,9 @@
 // $num = 4;
 //
 // $funzione = numberToString($num);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function numberToString($num)
@@ -405,7 +435,9 @@
 // $input = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
 //
 // $funzione = countPositivesSumNegatives($input);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function countPositivesSumNegatives($input) {
@@ -443,7 +475,9 @@
 // $haystack = ['3', '123124234', null, 'needle', 'world', 'hay', 2, '3', true, false];
 //
 // $funzione = findNeedle($haystack);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function findNeedle($haystack) {
@@ -471,7 +505,9 @@
 // $numbers = [0, 3, 4, 5];
 //
 // $funzione = square_sum($numbers);
-// echo $funzione;
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
 //
 //
 // function square_sum($numbers) : int {
@@ -481,6 +517,207 @@
 //     }
 //
 //     return $square_sum;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 19. Keep Hydrated!
+
+        >Nathan loves cycling.
+        Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+        You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+        EXAMPLE:
+            time = 3 ----> litres = 1
+            time = 6.7---> litres = 3
+            time = 11.8--> litres = 5
+        NOTES:
+    */
+
+// $t = 11.8;
+//
+// $funzione = litres($t);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function litres($t) {
+//     return floor($t * 0.5);
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 20. Beginner - Lost Without a Map
+
+        >Given an array of integers, return a new array with each value doubled.
+
+        EXAMPLE:
+            [1, 2, 3] --> [2, 4, 6]
+        NOTES:
+    */
+
+// $x = [4, 1, 1, 1, 4];
+//
+// $funzione = maps($x);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function maps($x)
+// {
+//     $array_doubled = [];
+//     foreach ($x as $key => $value) {
+//         $array_doubled[] = $value * 2;
+//     }
+//
+//     return $array_doubled;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 21. Convert a String to a Number!
+
+        >We need a function that can transform a string into a number. What ways of achieving this do you know?
+        EXAMPLE:
+            stringToNumber("1234") === 1234
+            stringToNumber("605" ) === 605
+            stringToNumber("1405") === 1405
+            stringToNumber("-7"  ) === -7
+        NOTES:
+            Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+    */
+
+// $str = '1234';
+//
+// $funzione = stringToNumber($str);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function stringToNumber($str) {
+//     return (int)$str;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 22. Rock Paper Scissors!
+
+        >Let's play! You have to return which player won! In case of a draw return Draw!.
+        EXAMPLE:
+        rps('scissors','paper') // Player 1 won!
+        rps('scissors','rock') // Player 2 won!
+        rps('paper','paper') // Draw!
+        NOTES:
+            http://i.imgur.com/aimOQVX.png
+
+    */
+
+// $p1 = 'rock';
+// $p2 = 'rock';
+//
+// $funzione = rpc($p1, $p2);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function rpc($p1, $p2) {
+//     if ($p1 == $p2) {
+//         return 'Draw!';
+//     }
+//
+//     if ($p1 == 'rock' && $p2 == 'scissors' ||
+//         $p1 == 'scissors' && $p2 == 'paper' ||
+//         $p1 === 'paper' && $p2 === 'rock') {
+//         return 'Player 1 won!';
+//     } else {
+//         return 'Player 2 won!';
+//     }
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /*  23. Expressions Matter
+
+        >Given three integers a ,b ,c, return the largest number obtained after inserting the
+         following operators and brackets: +, *, ()
+         In other words , try every combination of a,b,c with [*+()] , and return the Maximum Obtained
+        Notes:  The numbers are always positive.
+                The numbers are in the range (1  ≤  a, b, c  ≤  10).
+                You can use the same operation more than once.
+                It's not necessary to place all the signs and brackets.
+                Repetition in numbers may occur .
+                You cannot swap the operands. For instance, in the example below you cannot get expression (1 + 3) * 2 = 8.
+        Example:
+        With the numbers 1, 2 and 3 , here are some ways of placing signs and brackets:
+            1 * (2 + 3) = 5
+            1 * 2 * 3 = 6
+            1 + 2 * 3 = 7
+            (1 + 2) * 3 = 9
+        So the maximum value that you can obtain is 9.
+    */
+
+// $a = 2;
+// $b = 1;
+// $c = 2;
+//
+// $funzione = expressionMatter($a, $b, $c);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function expressionMatter($a, $b, $c) {
+//     $maximum_number = 0;
+//
+//     $tries = [
+//         '1' => $a + $b + $c,
+//         '2' => $a * $b * $c,
+//         '3' => $a * $b + $c,
+//         '4' => $a + $b * $c,
+//         '5' => ($a + $b) * $c,
+//         '6' => $a * ($b + $c),
+//     ];
+//
+//     foreach ($tries as $key => $value) {
+//         if ($value > $maximum_number) {
+//             $maximum_number = $value;
+//         }
+//     }
+//
+//     return $maximum_number;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 24. Removing Elements
+
+        >Take an array and remove every second element out of that array.
+         Always keep the first element and start removing with the next element.
+        EXAMPLE:
+            $array = ['Keep', 'Remove', 'Keep', 'Remove', ...];
+        NOTES:
+            None of the arrays will be empty, so you don't have to worry about that!
+    */
+
+// $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//
+// $funzione = removeEveryOther($array);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function removeEveryOther($array) {
+//     $new_array = [];
+//     for ($i = 0; $i < count($array); $i+=2) {
+//         $new_array[] = $array[$i];
+//     }
+//
+//     return $new_array;
 // }
 //-----------------------------------------------------------------------------------------------------
 

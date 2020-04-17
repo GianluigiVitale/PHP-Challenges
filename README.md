@@ -24,3 +24,9 @@ _The challenges are organized in a chronological order_
 16. Count of positives / sum of negatives
 17. A Needle in the Haystack
 18. Square(n) Sum
+19. Keep Hydrated!
+20. Beginner - Lost Without a Map
+21. Convert a String to a Number!
+22. Rock Paper Scissors!
+23. Expressions Matter
+24. Removing Elements
