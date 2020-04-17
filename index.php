@@ -294,6 +294,196 @@
 // }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+    /* 13. Century From Year
+
+        >The first century spans from the year 1 up to and including the year 100,
+         The second - from the year 101 up to and including the year 200, etc.
+         Given a year, return the century it is in.
+        EXAMPLE:
+            centuryFromYear(1705)  returns (18)
+            centuryFromYear(1900)  returns (19)
+            centuryFromYear(1601)  returns (17)
+            centuryFromYear(2000)  returns (20)
+        NOTES:
+    */
+
+// $year = 50;
+//
+// $funzione = centuryFromYear($year);
+// echo $funzione;
+//
+//
+// function centuryFromYear($year)
+// {
+//     $year_to_string = strval($year);
+//
+//     if ($year_to_string[strlen($year_to_string)-1] > 0 || $year_to_string[strlen($year_to_string)-2] > 0) { // if either the last digit or the one before is greater than 0
+//         $number_minus_2digits = substr($year, 0, -2);
+//         $century = $number_minus_2digits += 1;
+//
+//         return $century;
+//     }
+//
+//     return substr($year, 0, -2);
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 14. Basic Mathematical Operations
+
+
+        >Your task is to create a function that does four basic mathematical operations.
+        The function should take three arguments - operation(string/char), value1(number), value2(number).
+        The function should return result of numbers after applying the chosen operation.
+        EXAMPLE:
+            basicOp('+', 4, 7)         // Output: 11
+            basicOp('-', 15, 18)       // Output: -3
+            basicOp('*', 5, 5)         // Output: 25
+            basicOp('/', 49, 7)        // Output: 7
+        NOTES:
+    */
+
+// $op = '*';
+// $val1 = 4;
+// $val2 = 7;
+//
+// $funzione = centuryFromYear($year);
+// echo $funzione;
+//
+//
+// function basicOp($op, $val1, $val2)
+// {
+//     switch ($op) {
+//         case '*':
+//             return $val1 * $val2;
+//         case '+':
+//             return $val1 + $val2;
+//         case '-':
+//             return $val1 - $val2;
+//         case '/':
+//             return $val1 / $val2;
+//     }
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 15. Convert a Number to a String!
+
+
+        >We need a function that can transform a number into a string.
+        What ways of achieving this do you know?
+        EXAMPLE:
+            numberToString(123); // returns '123';`
+            numberToString(999); // returns '999';`
+        NOTES:
+    */
+
+// $num = 4;
+//
+// $funzione = numberToString($num);
+// echo $funzione;
+//
+//
+// function numberToString($num)
+// {
+//     return strval($num);
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 16. Count of positives / sum of negatives
+
+        >Given an array of integers.
+        Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+        If the input array is empty or null, return an empty array.
+        EXAMPLE:
+            For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
+        NOTES:
+    */
+
+// $input = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
+//
+// $funzione = countPositivesSumNegatives($input);
+// echo $funzione;
+//
+//
+// function countPositivesSumNegatives($input) {
+//     if (empty($input)) {
+//         return [];
+//     }
+//
+//     $count_positive = 0;
+//     $sum_negative = 0;
+//     foreach ($input as $key => $value) {
+//         if ($value > 0) {
+//             $count_positive += 1;
+//         } else {
+//             $sum_negative += $value;
+//         }
+//     }
+//
+//     return [$count_positive, $sum_negative];
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 17. A Needle in the Haystack
+
+        >Can you find the needle in the haystack?
+        Write a function findNeedle() that takes an array full of junk but containing one "needle"
+        After your function finds the needle it should return a message (as a string) that says:
+        "found the needle at position " plus the index it found the needle, so:
+        EXAMPLE:
+            find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
+            should return "found the needle at position 5"
+        NOTES:
+    */
+
+// $haystack = ['3', '123124234', null, 'needle', 'world', 'hay', 2, '3', true, false];
+//
+// $funzione = findNeedle($haystack);
+// echo $funzione;
+//
+//
+// function findNeedle($haystack) {
+//     if ($haystack === null) {
+//         return null;
+//     }
+//
+//     $position_needle = array_search('needle', $haystack);   // since the keys of the array are equal to the normal index I can use array_search to get the position
+//
+//     if ($position_needle) {
+//         return 'found the needle at position ' . $position_needle;
+//     }
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 18. Square(n) Sum
+
+        >Create a funciton so that it squares each number passed into it and then sums the results together.
+        EXAMPLE:
+            given [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+        NOTES:
+    */
+
+// $numbers = [0, 3, 4, 5];
+//
+// $funzione = square_sum($numbers);
+// echo $funzione;
+//
+//
+// function square_sum($numbers) : int {
+//     $square_sum = 0;
+//     foreach ($numbers as $key => $value) {
+//         $square_sum += pow($value, 2);
+//     }
+//
+//     return $square_sum;
+// }
+//-----------------------------------------------------------------------------------------------------
+
 
 
 ?>

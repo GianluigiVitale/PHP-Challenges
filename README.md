@@ -18,3 +18,9 @@ _The challenges are organized in a chronological order_
 10. Grasshopper - Summation
 11. Convert boolean values to strings 'Yes' or 'No'.
 12. Reversed Strings
+13. Century From Year
+14. Basic Mathematical Operations
+15. Convert a Number to a String!
+16. Count of positives / sum of negatives
+17. A Needle in the Haystack
+18. Square(n) Sum
