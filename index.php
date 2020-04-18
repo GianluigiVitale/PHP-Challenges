@@ -8,17 +8,17 @@
         NOTES:
     */
 
-// $a = 5;
-// $b = 8;
-//
-// $funzione = multiply($a, $b);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function multiply($a, $b) {
-//     return $a * $b;
-// }
+$a = 5;
+$b = 8;
+
+$funzione = multiply($a, $b);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function multiply($a, $b) {
+    return $a * $b;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -30,20 +30,20 @@
         NOTES:
     */
 
-// $n = 2;
-//
-// $funzione = even_or_odd($n);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function even_or_odd(int $n): string {
-//     if ($n % 2 == 0) {
-//         return 'Even';
-//     } else {
-//         return 'Odd';
-//     }
-// }
+$n = 2;
+
+$funzione = even_or_odd($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function even_or_odd(int $n): string {
+    if ($n % 2 == 0) {
+        return 'Even';
+    } else {
+        return 'Odd';
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -56,27 +56,27 @@
             if there is nothing to sum, the sum is default to 0.
     */
 
-// $arr = [-1, 2, 3, 4, -5];
-//
-// $funzione = positive_sum($arr);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function positive_sum($arr) {
-//     if (empty($arr)) {
-//         return 0;
-//     } else {
-//         $sum = 0;
-//         foreach ($arr as $key => $value) {
-//             if ($value > 0) {
-//                 $sum += $value;
-//             }
-//         }
-//
-//         return $sum;
-//     }
-// }
+$arr = [-1, 2, 3, 4, -5];
+
+$funzione = positive_sum($arr);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function positive_sum($arr) {
+    if (empty($arr)) {
+        return 0;
+    } else {
+        $sum = 0;
+        foreach ($arr as $key => $value) {
+            if ($value > 0) {
+                $sum += $value;
+            }
+        }
+
+        return $sum;
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -90,16 +90,16 @@
         NOTES:
     */
 
-// $n = 14;
-//
-// $funzione = opposite($n);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function opposite($n) {
-//     return $n * -1;
-// }
+$n = 14;
+
+$funzione = opposite($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function opposite($n) {
+    return $n * -1;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -111,16 +111,16 @@
         NOTES:
     */
 
-// $s = 'place';
-//
-// $funzione = remove_char($s);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function remove_char(string $s): string {
-//     return substr($s, 1, -1);
-// }
+$s = 'place';
+
+$funzione = remove_char($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function remove_char(string $s): string {
+    return substr($s, 1, -1);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -138,20 +138,20 @@
         Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
     */
 
-// $num = -20;
-//
-// $funzione = makeNegative($num);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function makeNegative(float $num) : float {
-//     if ($num <= 0) {
-//         return $num;
-//     }
-//
-//     return $num * -1;
-// }
+$num = -20;
+
+$funzione = makeNegative($num);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function makeNegative(float $num) : float {
+    if ($num <= 0) {
+        return $num;
+    }
+
+    return $num * -1;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -164,23 +164,23 @@
         NOTES:
     */
 
-// $n = 3;
-// $str = '*';
-//
-// $funzione = repeatStr($n, $str);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function repeatStr($n, $str)
-// {
-//     $new_string = '';
-//     for ($i = 1; $i <= $n; $i++) {
-//         $new_string .= $str;
-//     }
-//
-//     return $new_string;
-// }
+$n = 3;
+$str = '*';
+
+$funzione = repeatStr($n, $str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function repeatStr($n, $str)
+{
+    $new_string = '';
+    for ($i = 1; $i <= $n; $i++) {
+        $new_string .= $str;
+    }
+
+    return $new_string;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -191,16 +191,16 @@
         NOTES:
     */
 
-// $s = '8 j 8   mBliB8g  imjB8B8  jl  B';
-//
-// $funzione = no_space($s);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function no_space(string $s): string {
-//     return str_replace(' ', '', $s);
-// }
+$s = '8 j 8   mBliB8g  imjB8B8  jl  B';
+
+$funzione = no_space($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function no_space(string $s): string {
+    return str_replace(' ', '', $s);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -214,24 +214,24 @@
         You can assume, for the purpose of this kata, that the supplied array will not be empty.
     */
 
-// $arr = [3, 5, 10, 1, 4, 55];
-//
-// $funzione = smallestInteger($arr);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function smallestInteger($arr) {
-//     $smallest_number = $arr[0];
-//
-//     foreach ($arr as $key => $value) {
-//         if ($value < $smallest_number) {
-//             $smallest_number = $value;
-//         }
-//     }
-//
-//     return $smallest_number;
-// }
+$arr = [3, 5, 10, 1, 4, 55];
+
+$funzione = smallestInteger($arr);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function smallestInteger($arr) {
+    $smallest_number = $arr[0];
+
+    foreach ($arr as $key => $value) {
+        if ($value < $smallest_number) {
+            $smallest_number = $value;
+        }
+    }
+
+    return $smallest_number;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -247,22 +247,22 @@
         NOTES:
     */
 
-// $n = 8;
-//
-// $funzione = summation($n);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function summation($n) {
-//     $sum = 0;
-//
-//     for ($i = $n; $i >= 1; $i--) {
-//         $sum += $i;
-//     }
-//
-//     return $sum;
-// }
+$n = 8;
+
+$funzione = summation($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function summation($n) {
+    $sum = 0;
+
+    for ($i = $n; $i >= 1; $i--) {
+        $sum += $i;
+    }
+
+    return $sum;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -273,20 +273,20 @@
         NOTES:
     */
 
-// $bool = true;
-//
-// $funzione = boolToWord($bool);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function boolToWord($bool) {
-//     if ($bool === true) {
-//         return 'Yes';
-//     }
-//
-//     return 'No';
-// }
+$bool = true;
+
+$funzione = boolToWord($bool);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function boolToWord($bool) {
+    if ($bool === true) {
+        return 'Yes';
+    }
+
+    return 'No';
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -297,26 +297,26 @@
         NOTES:
     */
 
-// $str = 'world';
-//
-// $funzione = solution($str);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function solution($str) {
-//     return strrev($str);
-// }
-// function solution($str) {   // another way
-//     $reversed_string = '';
-//
-//     for ($i = strlen($str); $i >= 0; $i--) {
-//         $reversed_string .= $str[$i];
-//     }
-//
-//     return $reversed_string;
-// }
+$str = 'world';
+
+$funzione = solution($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function solution($str) {
+    return strrev($str);
+}
+function solution($str) {   // another way
+    $reversed_string = '';
+
+    for ($i = strlen($str); $i >= 0; $i--) {
+        $reversed_string .= $str[$i];
+    }
+
+    return $reversed_string;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -333,27 +333,27 @@
         NOTES:
     */
 
-// $year = 50;
-//
-// $funzione = centuryFromYear($year);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function centuryFromYear($year)
-// {
-//     $year_to_string = strval($year);
-//
-//     if ($year_to_string[strlen($year_to_string)-1] > 0 || $year_to_string[strlen($year_to_string)-2] > 0) { // if either the last digit or the one before is greater than 0
-//         $number_minus_2digits = substr($year, 0, -2);
-//         $century = $number_minus_2digits += 1;
-//
-//         return $century;
-//     }
-//
-//     return substr($year, 0, -2);
-// }
+$year = 50;
+
+$funzione = centuryFromYear($year);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function centuryFromYear($year)
+{
+    $year_to_string = strval($year);
+
+    if ($year_to_string[strlen($year_to_string)-1] > 0 || $year_to_string[strlen($year_to_string)-2] > 0) { // if either the last digit or the one before is greater than 0
+        $number_minus_2digits = substr($year, 0, -2);
+        $century = $number_minus_2digits += 1;
+
+        return $century;
+    }
+
+    return substr($year, 0, -2);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -371,29 +371,29 @@
         NOTES:
     */
 
-// $op = '*';
-// $val1 = 4;
-// $val2 = 7;
-//
-// $funzione = basicOp($op, $val1, $val2);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function basicOp($op, $val1, $val2)
-// {
-//     switch ($op) {
-//         case '*':
-//             return $val1 * $val2;
-//         case '+':
-//             return $val1 + $val2;
-//         case '-':
-//             return $val1 - $val2;
-//         case '/':
-//             return $val1 / $val2;
-//     }
-// }
+$op = '*';
+$val1 = 4;
+$val2 = 7;
+
+$funzione = basicOp($op, $val1, $val2);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function basicOp($op, $val1, $val2)
+{
+    switch ($op) {
+        case '*':
+            return $val1 * $val2;
+        case '+':
+            return $val1 + $val2;
+        case '-':
+            return $val1 - $val2;
+        case '/':
+            return $val1 / $val2;
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -408,22 +408,22 @@
         NOTES:
     */
 
-// $num = 4;
-//
-// $funzione = numberToString($num);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function numberToString($num)
-// {
-//     return strval($num);
-// }
+$num = 4;
+
+$funzione = numberToString($num);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function numberToString($num)
+{
+    return strval($num);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
-    /* 16. Count of positives / sum of negatives
+    /* 16. Count of positives - sum of negatives
 
         >Given an array of integers.
         Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
@@ -433,31 +433,31 @@
         NOTES:
     */
 
-// $input = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
-//
-// $funzione = countPositivesSumNegatives($input);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function countPositivesSumNegatives($input) {
-//     if (empty($input)) {
-//         return [];
-//     }
-//
-//     $count_positive = 0;
-//     $sum_negative = 0;
-//     foreach ($input as $key => $value) {
-//         if ($value > 0) {
-//             $count_positive += 1;
-//         } else {
-//             $sum_negative += $value;
-//         }
-//     }
-//
-//     return [$count_positive, $sum_negative];
-// }
+$input = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
+
+$funzione = countPositivesSumNegatives($input);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function countPositivesSumNegatives($input) {
+    if (empty($input)) {
+        return [];
+    }
+
+    $count_positive = 0;
+    $sum_negative = 0;
+    foreach ($input as $key => $value) {
+        if ($value > 0) {
+            $count_positive += 1;
+        } else {
+            $sum_negative += $value;
+        }
+    }
+
+    return [$count_positive, $sum_negative];
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -473,25 +473,25 @@
         NOTES:
     */
 
-// $haystack = ['3', '123124234', null, 'needle', 'world', 'hay', 2, '3', true, false];
-//
-// $funzione = findNeedle($haystack);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function findNeedle($haystack) {
-//     if ($haystack === null) {
-//         return null;
-//     }
-//
-//     $position_needle = array_search('needle', $haystack);   // since the keys of the array are equal to the normal index I can use array_search to get the position
-//
-//     if ($position_needle) {
-//         return 'found the needle at position ' . $position_needle;
-//     }
-// }
+$haystack = ['3', '123124234', null, 'needle', 'world', 'hay', 2, '3', true, false];
+
+$funzione = findNeedle($haystack);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function findNeedle($haystack) {
+    if ($haystack === null) {
+        return null;
+    }
+
+    $position_needle = array_search('needle', $haystack);   // since the keys of the array are equal to the normal index I can use array_search to get the position
+
+    if ($position_needle) {
+        return 'found the needle at position ' . $position_needle;
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -503,22 +503,22 @@
         NOTES:
     */
 
-// $numbers = [0, 3, 4, 5];
-//
-// $funzione = square_sum($numbers);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function square_sum($numbers) : int {
-//     $square_sum = 0;
-//     foreach ($numbers as $key => $value) {
-//         $square_sum += pow($value, 2);
-//     }
-//
-//     return $square_sum;
-// }
+$numbers = [0, 3, 4, 5];
+
+$funzione = square_sum($numbers);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function square_sum($numbers) : int {
+    $square_sum = 0;
+    foreach ($numbers as $key => $value) {
+        $square_sum += pow($value, 2);
+    }
+
+    return $square_sum;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -534,17 +534,17 @@
         NOTES:
     */
 
-// $t = 11.8;
-//
-// $funzione = litres($t);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function litres($t) {
-//     return floor($t * 0.5);
-// }
+$t = 11.8;
+
+$funzione = litres($t);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function litres($t) {
+    return floor($t * 0.5);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -557,23 +557,23 @@
         NOTES:
     */
 
-// $x = [4, 1, 1, 1, 4];
-//
-// $funzione = maps($x);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function maps($x)
-// {
-//     $array_doubled = [];
-//     foreach ($x as $key => $value) {
-//         $array_doubled[] = $value * 2;
-//     }
-//
-//     return $array_doubled;
-// }
+$x = [4, 1, 1, 1, 4];
+
+$funzione = maps($x);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function maps($x)
+{
+    $array_doubled = [];
+    foreach ($x as $key => $value) {
+        $array_doubled[] = $value * 2;
+    }
+
+    return $array_doubled;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -590,17 +590,17 @@
 
     */
 
-// $str = '1234';
-//
-// $funzione = stringToNumber($str);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function stringToNumber($str) {
-//     return (int)$str;
-// }
+$str = '1234';
+
+$funzione = stringToNumber($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function stringToNumber($str) {
+    return (int)$str;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -613,31 +613,30 @@
         rps('paper','paper') // Draw!
         NOTES:
             http://i.imgur.com/aimOQVX.png
-
     */
 
-// $p1 = 'rock';
-// $p2 = 'rock';
-//
-// $funzione = rpc($p1, $p2);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function rpc($p1, $p2) {
-//     if ($p1 == $p2) {
-//         return 'Draw!';
-//     }
-//
-//     if ($p1 == 'rock' && $p2 == 'scissors' ||
-//         $p1 == 'scissors' && $p2 == 'paper' ||
-//         $p1 === 'paper' && $p2 === 'rock') {
-//         return 'Player 1 won!';
-//     } else {
-//         return 'Player 2 won!';
-//     }
-// }
+$p1 = 'rock';
+$p2 = 'rock';
+
+$funzione = rpc($p1, $p2);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function rpc($p1, $p2) {
+    if ($p1 == $p2) {
+        return 'Draw!';
+    }
+
+    if ($p1 == 'rock' && $p2 == 'scissors' ||
+        $p1 == 'scissors' && $p2 == 'paper' ||
+        $p1 === 'paper' && $p2 === 'rock') {
+        return 'Player 1 won!';
+    } else {
+        return 'Player 2 won!';
+    }
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -661,36 +660,36 @@
         So the maximum value that you can obtain is 9.
     */
 
-// $a = 2;
-// $b = 1;
-// $c = 2;
-//
-// $funzione = expressionMatter($a, $b, $c);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function expressionMatter($a, $b, $c) {
-//     $maximum_number = 0;
-//
-//     $tries = [
-//         '1' => $a + $b + $c,
-//         '2' => $a * $b * $c,
-//         '3' => $a * $b + $c,
-//         '4' => $a + $b * $c,
-//         '5' => ($a + $b) * $c,
-//         '6' => $a * ($b + $c),
-//     ];
-//
-//     foreach ($tries as $key => $value) {
-//         if ($value > $maximum_number) {
-//             $maximum_number = $value;
-//         }
-//     }
-//
-//     return $maximum_number;
-// }
+$a = 2;
+$b = 1;
+$c = 2;
+
+$funzione = expressionMatter($a, $b, $c);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function expressionMatter($a, $b, $c) {
+    $maximum_number = 0;
+
+    $tries = [
+        '1' => $a + $b + $c,
+        '2' => $a * $b * $c,
+        '3' => $a * $b + $c,
+        '4' => $a + $b * $c,
+        '5' => ($a + $b) * $c,
+        '6' => $a * ($b + $c),
+    ];
+
+    foreach ($tries as $key => $value) {
+        if ($value > $maximum_number) {
+            $maximum_number = $value;
+        }
+    }
+
+    return $maximum_number;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -704,22 +703,22 @@
             None of the arrays will be empty, so you don't have to worry about that!
     */
 
-// $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//
-// $funzione = removeEveryOther($array);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function removeEveryOther($array) {
-//     $new_array = [];
-//     for ($i = 0; $i < count($array); $i+=2) {
-//         $new_array[] = $array[$i];
-//     }
-//
-//     return $new_array;
-// }
+$array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+$funzione = removeEveryOther($array);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function removeEveryOther($array) {
+    $new_array = [];
+    for ($i = 0; $i < count($array); $i+=2) {
+        $new_array[] = $array[$i];
+    }
+
+    return $new_array;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -737,32 +736,32 @@
             The second string argument will always be of length 1
     */
 
-// $str = 'Hello';
-// $letter = 'o';
-//
-// $funzione = strCount($str, $letter);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function strCount($str, $letter) {
-//     return substr_count($str, $letter);
-// }
-// function strCount($str, $letter) {  // another way
-//     $count = 0;
-//     for ($i = 0; $i < strlen($str); $i++) {
-//         if ($str[$i] == $letter) {
-//             $count++;
-//         }
-//     }
-//
-//     return $count;
-// }
+$str = 'Hello';
+$letter = 'o';
+
+$funzione = strCount($str, $letter);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function strCount($str, $letter) {
+    return substr_count($str, $letter);
+}
+function strCount($str, $letter) {  // another way
+    $count = 0;
+    for ($i = 0; $i < strlen($str); $i++) {
+        if ($str[$i] == $letter) {
+            $count++;
+        }
+    }
+
+    return $count;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
-    /* 26. Is the string uppercase?
+    /* 26. Is the string uppercase
 
         >Create a method is_uppercase() to see whether the string is ALL CAPS. For example:
         EXAMPLE:
@@ -777,18 +776,18 @@
              so any string containing no letters at all is trivially considered to be in ALL CAPS.
     */
 
-// $str = 'Hello';
-//
-// $funzione = is_uppercase($str);
-// echo $funzione ? 'true' : 'false';  // to print a boolean value
-//
-//
-// function is_uppercase($str) {
-//     if (strtoupper($str) == $str) {
-//         return true;
-//     }
-//     return false;
-// }
+$str = 'Hello';
+
+$funzione = is_uppercase($str);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function is_uppercase($str) {
+    if (strtoupper($str) == $str) {
+        return true;
+    }
+    return false;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -803,30 +802,30 @@
         NOTES:
     */
 
-// $ages = [82, 15, 6, 38, 35];
-//
-// $funzione = differenceInAges($ages);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function differenceInAges($ages) {
-//     $youngest = $ages[0];
-//     $oldest = $ages[0];
-//     $difference_age = 0;
-//
-//     foreach ($ages as $key => $value) {
-//         if ($value < $youngest) {
-//             $youngest = $value;
-//         } elseif ($value > $oldest) {
-//             $oldest = $value;
-//         }
-//     }
-//     $difference_age = $oldest - $youngest;
-//
-//     return [$youngest, $oldest, $difference_age];
-// }
+$ages = [82, 15, 6, 38, 35];
+
+$funzione = differenceInAges($ages);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function differenceInAges($ages) {
+    $youngest = $ages[0];
+    $oldest = $ages[0];
+    $difference_age = 0;
+
+    foreach ($ages as $key => $value) {
+        if ($value < $youngest) {
+            $youngest = $value;
+        } elseif ($value > $oldest) {
+            $oldest = $value;
+        }
+    }
+    $difference_age = $oldest - $youngest;
+
+    return [$youngest, $oldest, $difference_age];
+}
 //-----------------------------------------------------------------------------------------------------
 
     // 7kyu
@@ -841,24 +840,24 @@
         NOTES:
     */
 
-// $str = 'abracadabra';
-//
-// $funzione = getCount($str);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function getCount($str) {
-//     $vowelsCount = 0;
-//     $vowels = ['a', 'e', 'i', 'o', 'u'];
-//
-//     foreach ($vowels as $key => $value) {
-//         $vowelsCount += substr_count($str, $value);
-//     }
-//
-//     return $vowelsCount;
-// }
+$str = 'abracadabra';
+
+$funzione = getCount($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function getCount($str) {
+    $vowelsCount = 0;
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+
+    foreach ($vowels as $key => $value) {
+        $vowelsCount += substr_count($str, $value);
+    }
+
+    return $vowelsCount;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -873,31 +872,31 @@
             The parameter of accum is a string which includes only letters from a..z and A..Z.
     */
 
-// $s = 'ZpglnRxqenU';
-//
-// $funzione = accum($s);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function accum($s) {
-//     $new_string = '';
-//
-//     for ($i = 0; $i < strlen($s); $i++) {
-//         $new_string .= strtoupper($s[$i]);
-//
-//         for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char - 1 (-1 because the first uppercase char is already added)
-//             $new_string .= strtolower($s[$i]);
-//         }
-//
-//         if ($i < strlen($s) - 1) { // if it's the last word don't add '-'
-//             $new_string .= '-';
-//         }
-//     }
-//
-//     return $new_string;
-// }
+$s = 'ZpglnRxqenU';
+
+$funzione = accum($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function accum($s) {
+    $new_string = '';
+
+    for ($i = 0; $i < strlen($s); $i++) {
+        $new_string .= strtoupper($s[$i]);
+
+        for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char - 1 (-1 because the first uppercase char is already added)
+            $new_string .= strtolower($s[$i]);
+        }
+
+        if ($i < strlen($s) - 1) { // if it's the last word don't add '-'
+            $new_string .= '-';
+        }
+    }
+
+    return $new_string;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -914,25 +913,25 @@
         NOTES:
     */
 
-// $text = 'testing';
-//
-// $funzione = getMiddle($text);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function getMiddle($text) {
-//     $middle_char = '';
-//
-//     if (strlen($text) % 2 == 0) {
-//         $middle_char = $text[strlen($text) / 2 - 1] . $text[strlen($text) / 2];
-//     } else {
-//         $middle_char = $text[floor(strlen($text) / 2)];
-//     }
-//
-//     return $middle_char;
-// }
+$text = 'testing';
+
+$funzione = getMiddle($text);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function getMiddle($text) {
+    $middle_char = '';
+
+    if (strlen($text) % 2 == 0) {
+        $middle_char = $text[strlen($text) / 2 - 1] . $text[strlen($text) / 2];
+    } else {
+        $middle_char = $text[floor(strlen($text) / 2)];
+    }
+
+    return $middle_char;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -949,22 +948,22 @@
             Output string must be two numbers separated by a single space, and highest number is first.
     */
 
-// $numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4";
-//
-// $funzione = highAndLow($numbers);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function highAndLow($numbers)
-// {
-//     $array = explode(' ', $numbers);
-//     $max_number = max($array);
-//     $min_number = min($array);
-//
-//     return $max_number . ' ' . $min_number;
-// }
+$numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4";
+
+$funzione = highAndLow($numbers);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function highAndLow($numbers)
+{
+    $array = explode(' ', $numbers);
+    $max_number = max($array);
+    $min_number = min($array);
+
+    return $max_number . ' ' . $min_number;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -980,22 +979,22 @@
         NOTES:
     */
 
-// $n = 3024;
-//
-// $funzione = descendingOrder($n);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function descendingOrder(int $n): int {
-//     $string_array = str_split($n);
-//     rsort($string_array);
-//
-//     $string_sorted = implode('', $string_array);
-//
-//     return (int)$string_sorted;
-// }
+$n = 3024;
+
+$funzione = descendingOrder($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function descendingOrder(int $n): int {
+    $string_array = str_split($n);
+    rsort($string_array);
+
+    $string_sorted = implode('', $string_array);
+
+    return (int)$string_sorted;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -1007,26 +1006,26 @@
         NOTES:
     */
 
-// $str = 'turns out random test cases are easier than writing out basic ones';
-//
-// $funzione = findShort($str);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function findShort($str) {
-//     $array_str = explode(' ', $str);
-//
-//     $shortest_word = $array_str[0];
-//     foreach ($array_str as $key => $value) {
-//         if (strlen($value) < strlen($shortest_word)) {
-//             $shortest_word = $value;
-//         }
-//     }
-//
-//     return strlen($shortest_word);
-// }
+$str = 'turns out random test cases are easier than writing out basic ones';
+
+$funzione = findShort($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function findShort($str) {
+    $array_str = explode(' ', $str);
+
+    $shortest_word = $array_str[0];
+    foreach ($array_str as $key => $value) {
+        if (strlen($value) < strlen($shortest_word)) {
+            $shortest_word = $value;
+        }
+    }
+
+    return strlen($shortest_word);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -1043,23 +1042,23 @@
         NOTES:
     */
 
-// $s = 'xxxoo';
-//
-// $funzione = XO($s);
-// echo $funzione ? 'true' : 'false';  // to print a boolean value
-//
-//
-// function XO($s) {
-//     $s_lowercase = strtolower($s);
-//
-//     $x_count = substr_count($s_lowercase, 'x');
-//     $o_count = substr_count($s_lowercase, 'o');
-//
-//     if ($x_count == 0 && $o_count == 0 || $x_count == $o_count) {
-//         return true;
-//     }
-//     return false;
-// }
+$s = 'xxxoo';
+
+$funzione = XO($s);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function XO($s) {
+    $s_lowercase = strtolower($s);
+
+    $x_count = substr_count($s_lowercase, 'x');
+    $o_count = substr_count($s_lowercase, 'o');
+
+    if ($x_count == 0 && $o_count == 0 || $x_count == $o_count) {
+        return true;
+    }
+    return false;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -1075,25 +1074,25 @@
         NOTES:
     */
 
-// $string = 'Dermatoglyphics';
-//
-// $funzione = isIsogram($string);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function isIsogram($string) {
-//     $string_lowercase = strtolower($string);
-//
-//     for ($i = 0; $i < strlen($string); $i++) {
-//         $char_count = substr_count($string_lowercase, $string[$i]);
-//         if ($char_count > 1) {
-//             return false;
-//         }
-//     }
-//
-//     return true;
-// }
+$string = 'Dermatoglyphics';
+
+$funzione = isIsogram($string);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function isIsogram($string) {
+    $string_lowercase = strtolower($string);
+
+    for ($i = 0; $i < strlen($string); $i++) {
+        $char_count = substr_count($string_lowercase, $string[$i]);
+        if ($char_count > 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -1106,17 +1105,17 @@
         NOTES:
     */
 
-// $string = 'How can mirrors be real if our eyes aren\'t real';
-//
-// $funzione = capitalize($string);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-// function capitalize($string)
-// {
-//     return ucwords($string);
-// }
+$string = 'How can mirrors be real if our eyes aren\'t real';
+
+$funzione = capitalize($string);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function capitalize($string)
+{
+    return ucwords($string);
+}
 //-----------------------------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------------------------
@@ -1144,28 +1143,28 @@
             aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)
     */
 
-// $p0 = 1500;
-// $percent = 5;
-// $aug = 100;
-// $p = 5000;
-//
-// $funzione = nbYear($p0, $percent, $aug, $p);
-// echo '<pre>';
-// print_r($funzione);
-// echo '</pre';
-//
-//
-// function nbYear($p0, $percent, $aug, $p) {
-//
-//     $i = 0;
-//     while ($p0 < $p) {
-//         $p0 = $p0 * (1 + $percent / 100) + $aug;
-//
-//         $i++;
-//     }
-//
-//     return $i;
-// }
+$p0 = 1500;
+$percent = 5;
+$aug = 100;
+$p = 5000;
+
+$funzione = nbYear($p0, $percent, $aug, $p);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function nbYear($p0, $percent, $aug, $p) {
+
+    $i = 0;
+    while ($p0 < $p) {
+        $p0 = $p0 * (1 + $percent / 100) + $aug;
+
+        $i++;
+    }
+
+    return $i;
+}
 //-----------------------------------------------------------------------------------------------------
 
 

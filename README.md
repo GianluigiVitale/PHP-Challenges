@@ -1,11 +1,18 @@
-### The challenges are taken from codewars.com
+#### The challenges are taken from codewars.com
+### CodeWars Profile Link: https://www.codewars.com/users/GianluigiVitale
 ***
-**To look for a specific challenge just search in the PHP file for 'Challenge Name'**  
-_For Example: to find the 10th challenge (Grasshopper - Summation) just search for: Grasshopper - Summation_
+**To look for a specific challenge just open the folder 'List Of Challenges' and open the file named 'Challenge Name'.php**   
+_For Example: to find the 10th challenge (Grasshopper - Summation) just search in the above folder for: Grasshopper - Summation.php_
+
+**The file index.php contains ALL the challenges one below the other (useful to watch quickly ALL the challenges)**   
+_To find the 10th challenge (Grasshopper - Summation) open the index.php file and just search for: Grasshopper - Summation_
 ***
 _The challenges are organized in a chronological order_
 
+_' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
+
 ### Challenge names:
+8kyu
 1. Multiply
 2. Even or Odd
 3. Sum of positive
@@ -21,7 +28,7 @@ _The challenges are organized in a chronological order_
 13. Century From Year
 14. Basic Mathematical Operations
 15. Convert a Number to a String!
-16. Count of positives / sum of negatives
+16. Count of positives - sum of negatives
 17. A Needle in the Haystack
 18. Square(n) Sum
 19. Keep Hydrated!
@@ -31,8 +38,11 @@ _The challenges are organized in a chronological order_
 23. Expressions Matter
 24. Removing Elements
 25. Number of characters
-26. Is the string uppercase?
+26. Is the string uppercase
 27. Find the Difference in Age between Oldest and Youngest Family Members
+
+7kyu
+
 28. Vowel Count
 29. Mumbling
 30. Get the Middle Character
