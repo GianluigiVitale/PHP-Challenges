@@ -1,4 +1,5 @@
 <?php
+    // 8kyu
 //-----------------------------------------------------------------------------------------------------
     /* 1. Multiply
 
@@ -827,6 +828,349 @@
 //     return [$youngest, $oldest, $difference_age];
 // }
 //-----------------------------------------------------------------------------------------------------
+
+    // 7kyu
+
+//-----------------------------------------------------------------------------------------------------
+    /* 28. Vowel Count
+
+        >Return the number (count) of vowels in the given string.
+        We will consider a, e, i, o, and u as vowels for this Kata.
+        The input string will only consist of lower case letters and/or spaces.
+        EXAMPLE:
+        NOTES:
+    */
+
+// $str = 'abracadabra';
+//
+// $funzione = getCount($str);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function getCount($str) {
+//     $vowelsCount = 0;
+//     $vowels = ['a', 'e', 'i', 'o', 'u'];
+//
+//     foreach ($vowels as $key => $value) {
+//         $vowelsCount += substr_count($str, $value);
+//     }
+//
+//     return $vowelsCount;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 29. Mumbling
+
+        >This time no story, no theory. The examples below show you how to write function accum:
+        EXAMPLE:
+            accum("abcd") -> "A-Bb-Ccc-Dddd"
+            accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+            accum("cwAt") -> "C-Ww-Aaa-Tttt"
+        NOTES:
+            The parameter of accum is a string which includes only letters from a..z and A..Z.
+    */
+
+// $s = 'ZpglnRxqenU';
+//
+// $funzione = accum($s);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function accum($s) {
+//     $new_string = '';
+//
+//     for ($i = 0; $i < strlen($s); $i++) {
+//         $new_string .= strtoupper($s[$i]);
+//
+//         for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char - 1 (-1 because the first uppercase char is already added)
+//             $new_string .= strtolower($s[$i]);
+//         }
+//
+//         if ($i < strlen($s) - 1) { // if it's the last word don't add '-'
+//             $new_string .= '-';
+//         }
+//     }
+//
+//     return $new_string;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 30. Get the Middle Character
+
+        >You are going to be given a word. Your job is to return the middle character of the word.
+         If the word's length is odd, return the middle character.
+         If the word's length is even, return the middle 2 characters.
+        EXAMPLE:
+            Kata.getMiddle("test") should return "es"
+            Kata.getMiddle("testing") should return "t"
+            Kata.getMiddle("middle") should return "dd"
+            Kata.getMiddle("A") should return "A"
+        NOTES:
+    */
+
+// $text = 'testing';
+//
+// $funzione = getMiddle($text);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function getMiddle($text) {
+//     $middle_char = '';
+//
+//     if (strlen($text) % 2 == 0) {
+//         $middle_char = $text[strlen($text) / 2 - 1] . $text[strlen($text) / 2];
+//     } else {
+//         $middle_char = $text[floor(strlen($text) / 2)];
+//     }
+//
+//     return $middle_char;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 31. Highest and Lowest
+
+        >In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+        EXAMPLE:
+            highAndLow("1 2 3 4 5");  // return "5 1"
+            highAndLow("1 2 -3 4 5"); // return "5 -3"
+            highAndLow("1 9 3 4 -5"); // return "9 -5"
+        NOTES:
+            All numbers are valid Int32, no need to validate them.
+            There will always be at least one number in the input string.
+            Output string must be two numbers separated by a single space, and highest number is first.
+    */
+
+// $numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4";
+//
+// $funzione = highAndLow($numbers);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function highAndLow($numbers)
+// {
+//     $array = explode(' ', $numbers);
+//     $max_number = max($array);
+//     $min_number = min($array);
+//
+//     return $max_number . ' ' . $min_number;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 32. Descending Order
+
+        >Your task is to make a function that can take any non-negative integer as a argument
+         and return it with its digits in descending order.
+          Essentially, rearrange the digits to create the highest possible number.
+        EXAMPLE:
+            Input: 21445 Output: 54421
+            Input: 145263 Output: 654321
+            Input: 123456789 Output: 987654321
+        NOTES:
+    */
+
+// $n = 3024;
+//
+// $funzione = descendingOrder($n);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function descendingOrder(int $n): int {
+//     $string_array = str_split($n);
+//     rsort($string_array);
+//
+//     $string_sorted = implode('', $string_array);
+//
+//     return (int)$string_sorted;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 33. Shortest Word
+
+        >Simple, given a string of words, return the length of the shortest word(s).
+        String will never be empty and you do not need to account for different data types.
+        EXAMPLE:
+        NOTES:
+    */
+
+// $str = 'turns out random test cases are easier than writing out basic ones';
+//
+// $funzione = findShort($str);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function findShort($str) {
+//     $array_str = explode(' ', $str);
+//
+//     $shortest_word = $array_str[0];
+//     foreach ($array_str as $key => $value) {
+//         if (strlen($value) < strlen($shortest_word)) {
+//             $shortest_word = $value;
+//         }
+//     }
+//
+//     return strlen($shortest_word);
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 34. Exes and Ohs
+
+        >Check to see if a string has the same amount of 'x's and 'o's.
+        The method must return a boolean and be case insensitive. The string can contain any char.
+        EXAMPLE:
+            XO("ooxx") => true
+            XO("xooxx") => false
+            XO("ooxXm") => true
+            XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+            XO("zzoo") => false
+        NOTES:
+    */
+
+// $s = 'xxxoo';
+//
+// $funzione = XO($s);
+// echo $funzione ? 'true' : 'false';  // to print a boolean value
+//
+//
+// function XO($s) {
+//     $s_lowercase = strtolower($s);
+//
+//     $x_count = substr_count($s_lowercase, 'x');
+//     $o_count = substr_count($s_lowercase, 'o');
+//
+//     if ($x_count == 0 && $o_count == 0 || $x_count == $o_count) {
+//         return true;
+//     }
+//     return false;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 35. Isograms
+
+        >An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+         Implement a function that determines whether a string that contains only letters is an isogram.
+          Assume the empty string is an isogram. Ignore letter case.
+        EXAMPLE:
+            isIsogram "Dermatoglyphics" == true
+            isIsogram "aba" == false
+            isIsogram "moOse" == false -- ignore letter case
+        NOTES:
+    */
+
+// $string = 'Dermatoglyphics';
+//
+// $funzione = isIsogram($string);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+// function isIsogram($string) {
+//     $string_lowercase = strtolower($string);
+//
+//     for ($i = 0; $i < strlen($string); $i++) {
+//         $char_count = substr_count($string_lowercase, $string[$i]);
+//         if ($char_count > 1) {
+//             return false;
+//         }
+//     }
+//
+//     return true;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 36. Capitalize Each Word
+
+        >Write a function that capitalize each word
+        EXAMPLE:
+            "How can mirrors be real if our eyes aren't real"
+            "How Can Mirrors Be Real If Our Eyes Aren't Real"
+        NOTES:
+    */
+
+// $string = 'How can mirrors be real if our eyes aren\'t real';
+//
+// $funzione = capitalize($string);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+// function capitalize($string)
+// {
+//     return ucwords($string);
+// }
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+    /* 37. Growth of a Population
+
+        >In a small town the population is p0 = 1000 at the beginning of a year.
+         The population regularly increases by 2 percent per year and
+         moreover 50 new inhabitants per year come to live in the town.
+         How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+         More generally given parameters:
+         p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
+         the function nb_year should return n number of entire years needed to get a population greater or equal to p.
+        EXAMPLE:
+            At the end of the first year there will be:
+            1000 + 1000 * 0.02 + 50 => 1070 inhabitants
+
+            At the end of the 2nd year there will be:
+            1070 + 1070 * 0.02 + 50 => 1141 inhabitants (number of inhabitants is an integer)
+
+            At the end of the 3rd year there will be:
+            1141 + 1141 * 0.02 + 50 => 1213
+
+            It will need 3 entire years.
+        NOTES:
+            aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)
+    */
+
+// $p0 = 1500;
+// $percent = 5;
+// $aug = 100;
+// $p = 5000;
+//
+// $funzione = nbYear($p0, $percent, $aug, $p);
+// echo '<pre>';
+// print_r($funzione);
+// echo '</pre';
+//
+//
+// function nbYear($p0, $percent, $aug, $p) {
+//
+//     $i = 0;
+//     while ($p0 < $p) {
+//         $p0 = $p0 * (1 + $percent / 100) + $aug;
+//
+//         $i++;
+//     }
+//
+//     return $i;
+// }
+//-----------------------------------------------------------------------------------------------------
+
+
+
+
 
 
 

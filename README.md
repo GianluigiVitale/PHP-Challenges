@@ -33,3 +33,13 @@ _The challenges are organized in a chronological order_
 25. Number of characters
 26. Is the string uppercase?
 27. Find the Difference in Age between Oldest and Youngest Family Members
+28. Vowel Count
+29. Mumbling
+30. Get the Middle Character
+31. Highest and Lowest
+32. Descending Order
+33. Shortest Word
+34. Exes and Ohs
+35. Isograms
+36. Capitalize Each Word
+37. Growth of a Population
