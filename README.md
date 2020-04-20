@@ -54,3 +54,8 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 36. Capitalize Each Word
 37. Growth of a Population
 38. Complementary DNA
+39. Two to One
+40. Sum of odd numbers
+41. Printer Errors
+42. Ones and Zeros
+43. Number of People in the Bus

@@ -1207,6 +1207,244 @@ function DNA_strand($dna) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+    /* 39. Two to One
+
+        >Take 2 strings s1 and s2 including only letters from ato z.
+         Return a new sorted string, the longest possible, containing distinct letters,
+         each taken only once - coming from s1 or s2.
+        EXAMPLE:
+            a = "xyaabbbccccdefww"
+            b = "xxxxyyyyabklmopq"
+            longest(a, b) -> "abcdefklmopqwxy"
+            a = "abcdefghijklmnopqrstuvwxyz"
+            longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+        NOTES:
+    */
+
+$a = "aretheyhere";
+$b = "yestheyarehere";
+
+$funzione = longest($a, $b);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function longest($a, $b) {
+    $array = array_unique(str_split($a.$b));
+    sort($array);
+
+    return implode('', $array);
+}
+// another solution
+function longest($a, $b) {
+    $total_string = $a + $b;
+    $new_string = '';
+    for ($i = 0; $i < strlen($total_string); $i++) {
+        if (!strpos($new_string, $total_string[$i])) {
+            $new_string .= $total_string[$i];
+        }
+    }
+
+    $array = str_split($new_string);
+    sort($array);
+    $string_sorted = implode('', $array);
+
+    return $string_sorted;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 40. Sum of odd numbers
+
+    >Given the triangle of consecutive odd numbers:
+                        1
+                     3     5
+                  7     9    11
+              13    15    17    19
+           21    23    25    27    29
+           ...
+           Calculate the row sums of this triangle from the row index (starting at index 1) e.g.:
+    EXAMPLE:
+        rowSumOddNumbers(1); // 1
+        rowSumOddNumbers(2); // 3 + 5 = 8
+    NOTES:
+*/
+
+$n = 1;
+
+$funzione = rowSumOddNumbers($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function rowSumOddNumbers($n) {
+    return pow($n, 3);
+}
+// another solution
+function rowSumOddNumbers($n) {
+    if ($n == 1) {
+        return 1;
+    }
+
+    $number_of_oddNumber = 0;
+    for ($i = $n - 1; $i > 0; $i--) {   // I find how many odd numbers there are before the row $n
+        $number_of_oddNumber += $i;
+    }
+
+    $last_odd_number = 1;
+    for ($i = 1; $i < $number_of_oddNumber; $i++) {     // I get the last odd number before the row $n
+        $last_odd_number += 2;
+    }
+
+    $odd_numbers_rowN = 0;
+    for ($i = 0; $i < $n; $i++) {   // I get the sum of the numbers of the row $n
+        $last_odd_number += 2;
+        $odd_numbers_rowN += $last_odd_number;
+    }
+
+    return $odd_numbers_rowN;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 41. Printer Errors
+
+    >In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which,
+     for the sake of simplicity, are named with letters from a to m.
+
+    The colors used by the printer are recorded in a control string.
+     For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a,
+     four times color b, one time color h then one time color a...
+
+    Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced
+     e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+
+    You have to write a function printer_error which given a string will output the error rate of the printer
+     as a string representing a rational whose numerator is the number of errors and
+     the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+    EXAMPLE:
+        s="aaabbbbhaijjjm"
+        error_printer(s) => "0/14"
+        s="aaaxbbbbyyhwawiwjjjwwm"
+        error_printer(s) => "8/22"
+    NOTES:
+    The string has a length greater or equal to one and contains only letters from ato z.
+
+*/
+
+$s = 'kkkwwwaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyzuuuuu';
+
+$funzione = printerError($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function printerError($s) {
+    $length_string = strlen($s);
+    $new_str_wo_char = preg_replace('/[a-m]/', '', $s);
+
+    return strlen($new_str_wo_char) . '/' . $length_string;
+}
+// another solution
+function printerError($s) {
+    $length_string = strlen($s);
+
+    $allowed_char = ['a','b','c','d','e','f','g','h','i','j','k','l','m'];
+
+    $errors = 0;
+    for ($i = 0; $i < $length_string; $i++) {
+        if (!in_array($s[$i], $allowed_char)) {
+            $errors += 1;
+        }
+    }
+
+    return $errors . '/' . $length_string;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 42. Ones and Zeros
+
+    >Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+    Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+    EXAMPLE:
+        Testing: [0, 0, 0, 1] ==> 1
+        Testing: [0, 0, 1, 0] ==> 2
+        Testing: [0, 1, 0, 1] ==> 5
+        Testing: [1, 0, 0, 1] ==> 9
+        Testing: [0, 0, 1, 0] ==> 2
+        Testing: [0, 1, 1, 0] ==> 6
+        Testing: [1, 1, 1, 1] ==> 15
+        Testing: [1, 0, 1, 1] ==> 11
+    NOTES:
+        However, the arrays can have varying lengths, not just limited to 4.
+*/
+
+$arr = [1,1,1,1];
+
+$funzione = binaryArrayToNumber($arr);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function binaryArrayToNumber($arr) {
+    $str = implode('', $arr);
+
+    return bindec($str);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 43. Number of People in the Bus
+
+    >There is a bus moving in the city, and it takes and drop some people in each bus stop.
+
+    You are provided with a list (or array) of integer arrays (or tuples).
+     Each integer array has two items which represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+    Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+
+    Take a look on the test cases.
+    Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0.
+     So the return integer can't be negative.
+    The second value in the first integer array is 0, since the bus is empty in the first bus stop.
+    EXAMPLE:
+    NOTES:
+*/
+
+$bus_stops = [
+    [3, 0],
+    [9, 1],
+    [4, 8],
+    [12, 2],
+    [6, 1],
+    [7, 8],
+];
+
+
+$funzione = number($bus_stops);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function number($bus_stops) {
+    $people_on_bus = 0;
+
+    foreach ($bus_stops as $key => $value) {
+        $people_on_bus += $value[0];
+        $people_on_bus -= $value[1];
+    }
+
+    return $people_on_bus;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 
