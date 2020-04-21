@@ -67,3 +67,12 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 49. Find the stray number
 50. Breaking chocolate problem
 51. String ends with
+
+6kyu
+
+52. Find the odd int
+53. Multiples of 3 or 5
+54. Persistent Bugger
+55. Decode the Morse code
+56. Find The Parity Outlier
+57. Counting Duplicates

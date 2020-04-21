@@ -1734,6 +1734,339 @@ function solution($str, $ending) {
     return true;
 }
 //-----------------------------------------------------------------------------------------------------
+    // 6kyu
+//-----------------------------------------------------------------------------------------------------
+/* 52. Find the odd int
+
+    >Given an array, find the integer that appears an odd number of times.
+    There will always be only one integer that appears an odd number of times.
+    EXAMPLE:
+    NOTES:
+*/
+
+$seq = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5];
+
+$funzione = findIt($seq);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function findIt(array $seq) : int
+{
+    $array_num = array_count_values($seq);
+    foreach ($array_num as $key => $number) {
+        if ($number % 2 != 0) {
+            return $key;
+        }
+    }
+}
+
+// alternative method without array_count_values
+function findIt(array $seq) : int
+{
+    $array_numbers = [];    // this array contains as key the number and as value the times it is found in the array
+
+    foreach ($seq as $key => $number) {
+        if (empty($array_numbers[$number])) {   // if the number as a key doesn't exist it is declared and defined with 0
+            $array_numbers[$number] = 0;
+        }
+        $array_numbers[$number]++;
+    }
+
+    foreach ($array_numbers as $key => $number) {
+        if ($number % 2 != 0) {     // when the number of times the number appears in the array is odd return the number
+            return $key;
+        }
+    }
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 53. Multiples of 3 or 5
+
+    >If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
+     The sum of these multiples is 23.
+    Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+    EXAMPLE:
+    NOTES:
+        If the number is a multiple of both 3 and 5, only count it once.
+*/
+
+$number = 10;
+
+$funzione = solution($number);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function solution($number) {
+    $sum_multiple = 0;
+
+    for ($i = 1; $i < $number; $i++) {
+        if ($i % 3 == 0 || $i % 5 == 0) {
+            $sum_multiple += $i;
+        }
+    }
+
+    return $sum_multiple;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 54. Persistent Bugger
+
+    >Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence,
+     which is the number of times you must multiply the digits in num until you reach a single digit.
+
+    EXAMPLE:
+        persistence(39) === 3; // because 3 * 9 = 27, 2 * 7 = 14, 1 * 4 = 4 and 4 has only one digit
+        persistence(999) === 4; // because 9 * 9 * 9 = 729, 7 * 2 * 9 = 126, 1 * 2 * 6 = 12, and finally 1 * 2 = 2
+        persistence(4) === 0; // because 4 is already a one-digit number
+    NOTES:
+*/
+
+$num = 999;
+
+$funzione = persistence($num);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function persistence(int $num): int {
+    $i = 0;
+    while ($num > 9) {
+        $num = array_product(str_split($num));
+
+        $i++;
+    }
+
+    return $i;
+}
+// another method
+function persistence(int $num): int {
+    if ($num < 10) {
+        return 0;
+    }
+
+    $array_num = str_split($num);
+
+    $new_number = 9999;     // variable that is going to be updated with the new number after the multiplications
+
+    $i = 0;
+    while (strlen(strval($new_number)) > 1) {   // until the variable $new_number contains only 1 number...
+        $new_number = 1;
+
+        foreach ($array_num as $key => $number) {   // I multiply the numbers of the array $array_num among themselves
+            $new_number *= $number;
+        }
+        $array_num = str_split($new_number);
+
+        $i++;
+    }
+
+    return $i;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 55. Decode the Morse code
+
+    >In this kata you have to write a simple Morse code decoder.
+
+    EXAMPLE:
+        decode_morse('.... . -.--   .--- ..- -.. .')
+        hould return "HEY JUDE"
+    NOTES:
+        Extra spaces before or after the code have no meaning and should be ignored.
+*/
+
+$code = '.... . -.--   .--- ..- -.. .';
+
+$funzione = decode_morse($code);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function decode_morse(string $code): string {
+    $morse_code_array = [
+        "a"=>".-",
+        "b"=>"-...",
+        "c"=>"-.-.",
+        "d"=>"-..",
+        "e"=>".",
+        "f"=>"..-.",
+        "g"=>"--.",
+        "h"=>"....",
+        "i"=>"..",
+        "j"=>".---",
+        "k"=>"-.-",
+        "l"=>".-..",
+        "m"=>"--",
+        "n"=>"-.",
+        "o"=>"---",
+        "p"=>".--.",
+        "q"=>"--.-",
+        "r"=>".-.",
+        "s"=>"...",
+        "t"=>"-",
+        "u"=>"..-",
+        "v"=>"...-",
+        "w"=>".--",
+        "x"=>"-..-",
+        "y"=>"-.--",
+        "z"=>"--..",
+        "0"=>"-----",
+        "1"=>".----",
+        "2"=>"..---",
+        "3"=>"...--",
+        "4"=>"....-",
+        "5"=>".....",
+        "6"=>"-....",
+        "7"=>"--...",
+        "8"=>"---..",
+        "9"=>"----.",
+        "."=>".-.-.-",
+        ","=>"--..--",
+        "?"=>"..--..",
+        "/"=>"-..-.",
+        " "=>"",
+        "sos"=>'...---...',
+    ];
+
+    if ($code[0] == ' ' && $code[strlen($code) - 1] == ' ') {
+        $code = substr($code,1,-1);
+    }
+    $code = str_replace('  ',' ',$code);
+
+
+    $array_morse_words = explode(' ', $code);
+
+    $new_phrase = '';
+    foreach ($array_morse_words as $key => $word) {
+        foreach ($morse_code_array as $key2 => $code) {
+            if ($code == $word) {
+                $new_phrase .= $key2;
+            }
+        }
+    }
+    $phrase_definitive = strtoupper($new_phrase);
+
+
+    return $phrase_definitive;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 56. Find The Parity Outlier
+
+    >You are given an array (which will have a length of at least 3, but could be very large) containing integers.
+     The array is either entirely comprised of odd integers or entirely comprised of even integers
+      except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+    EXAMPLE:
+        [2, 4, 0, 100, 4, 11, 2602, 36]
+        Should return: 11 (the only odd number)
+
+        [160, 3, 1719, 19, 11, 13, -21]
+        Should return: 160 (the only even number)
+    NOTES:
+*/
+
+$integers = [160, 3, 1719, 19, 11, 13, -21];
+
+$funzione = find($integers);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function find($integers) {
+    $array_numbers = [
+        'odd' => [
+            'number' => 0,
+            'times' => 0,
+        ],
+        'even' => [
+            'number' => 0,
+            'times' => 0,
+        ],
+    ];
+
+
+    foreach ($integers as $key => $number) {
+        if ($number % 2 == 0) {
+            $array_numbers['even']['number'] = $number;
+            $array_numbers['even']['times']++;
+        } else {
+            $array_numbers['odd']['number'] = $number;
+            $array_numbers['odd']['times']++;
+        }
+    }
+
+    if ($array_numbers['odd']['times'] > $array_numbers['even']['times']) {
+        return $array_numbers['even']['number'];
+    }
+    return $array_numbers['odd']['number'];
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 57. Counting Duplicates
+
+    >Write a function that will return the count of distinct case-insensitive alphabetic characters
+     and numeric digits that occur more than once in the input string.
+     The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+    EXAMPLE:
+        "abcde" -> 0 # no characters repeats more than once
+        "aabbcde" -> 2 # 'a' and 'b'
+        "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+        "indivisibility" -> 1 # 'i' occurs six times
+        "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+        "aA11" -> 2 # 'a' and '1'
+        "ABBA" -> 2 # 'A' and 'B' each occur twice
+    NOTES:
+*/
+
+$text = 'aabBcde';
+
+$funzione = duplicateCount($text);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function duplicateCount($text) {
+    $duplicate_count = 0;
+
+    $array = array_count_values(str_split(strtolower($text)));
+    foreach ($array as $key => $count) {
+        if ($count > 1) {
+            $duplicate_count++;
+        }
+    }
+
+    return $duplicate_count;
+}
+// alternative method
+function duplicateCount($text) {
+    $text = strtolower($text);
+
+    $unique_char = '';
+    $char_repeated = '';
+    for ($i = 0; $i < strlen($text); $i++) {
+        if (strpos($unique_char, $text[$i]) === false) {
+            $unique_char .= $text[$i];
+        } elseif (strpos($char_repeated, $text[$i]) === false) {
+            $char_repeated .= $text[$i];
+        }
+    }
+
+    return strlen($char_repeated);
+}
+//-----------------------------------------------------------------------------------------------------
 
 
 
