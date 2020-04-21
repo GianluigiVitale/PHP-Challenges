@@ -59,3 +59,11 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 41. Printer Errors
 42. Ones and Zeros
 43. Number of People in the Bus
+44. Find the divisors!
+45. Sum of the first nth term of Series
+46. Reverse words
+47. Odd or Even sum array
+48. Don't give me five!
+49. Find the stray number
+50. Breaking chocolate problem
+51. String ends with

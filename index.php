@@ -1445,6 +1445,296 @@ function number($bus_stops) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/* 44. Find the divisors!
+
+    >Create a function named divisors/Divisors that takes an integer n > 1
+     and returns an array with all of the integer's divisors(except for 1 and the number itself),
+      from smallest to largest. If the number is prime return the string '(integer) is prime'
+    EXAMPLE:
+        divisors(12); // => [2, 3, 4, 6]
+        divisors(25); // => [5]
+        divisors(13); // => '13 is prime'
+    NOTES:
+*/
+
+$integer = 13;
+
+
+$funzione = divisors($integer);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function divisors($integer) {
+    $divisors = [];
+    for ($i = 2; $i < $integer; $i++) {
+        if ($integer % $i == 0) {
+            $divisors[] = $i;
+        }
+    }
+
+    if (empty($divisors)) {
+        return $integer . ' is prime';
+    }
+
+    return $divisors;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 45. Sum of the first nth term of Series
+
+    >Your task is to write a function which returns the sum of following series upto nth term(parameter).
+    Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+
+    You need to round the answer to 2 decimal places and return it as String.
+    If the given value is 0 then it should return 0.00
+    You will only be given Natural Numbers as arguments.
+    EXAMPLE:
+        SeriesSum(1) => 1 = "1.00"
+        SeriesSum(2) => 1 + 1/4 = "1.25"
+        SeriesSum(5) => 1 + 1/4 + 1/7 + 1/10 + 1/13 = "1.57"
+    NOTES:
+*/
+
+$n = 3;
+
+
+$funzione = series_sum($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function series_sum($n) {
+    if ($n == 0) {
+        return '0.00';
+    }
+
+    $sum = 1;
+    $divisor = 1;
+    for ($i = 1; $i < $n; $i++) {
+        $divisor += 3;
+        $sum += (1 / $divisor);
+    }
+
+    $sum_round = round($sum, 2);
+    $sum_round_2digits_str = number_format((float)$sum_round, 2, '.', '');
+
+    return $sum_round_2digits_str;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 46. Reverse words
+
+    >Create a function that accepts a string parameter, and reverses each word in the string.
+     All spaces in the string should be retained.
+    EXAMPLE:
+        "This is an example!" ==> "sihT si na !elpmaxe"
+        "double  spaces"      ==> "elbuod  secaps"
+    NOTES:
+*/
+
+$str = 'double  spaces';
+
+
+$funzione = reverseWords($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function reverseWords($str) {
+    $array = explode(' ', $str);
+
+    $reverse_array = [];
+    foreach ($array as $key => $word) {
+        $reverse_array[] = strrev($word);
+    }
+    $new_string = implode(' ', $reverse_array);
+
+    return $new_string;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 47. Odd or Even sum array
+
+    >Given a list of numbers, determine whether the sum of its elements is odd or even.
+    Give your answer as a string matching "odd" or "even".
+    EXAMPLE:
+        odd_or_even([0])          ==  "even"
+        odd_or_even([0, 1, 4])    ==  "odd"
+        odd_or_even([0, -1, -5])  ==  "even"
+    NOTES:
+        If the input array is empty consider it as: [0] (array with a zero).
+
+*/
+
+$a = [2, 5, 34, 6];
+
+
+$funzione = odd_or_even($a);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function odd_or_even(array $a): string {
+    $sum = 0;
+    foreach ($a as $key => $number) {
+        $sum += $number;
+    }
+
+    if ($sum % 2 == 0) {
+        return 'even';
+    }
+    return 'odd';
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 48. Don't give me five!
+
+    >In this kata you get the start number and the end number of a region and
+     should return the count of all numbers except numbers with a 5 in it.
+      The start and the end number are both inclusive!
+
+    EXAMPLE:
+        1,9 -> 1,2,3,4,6,7,8,9 -> Result 8
+        4,17 -> 4,6,7,8,9,10,11,12,13,14,16,17 -> Result 12
+    NOTES:
+        The result may contain fives. ;-)
+        The start number will always be smaller than the end number. Both numbers can be also negative!
+*/
+
+$start = 4;
+$end = 17;
+
+
+$funzione = dont_give_me_five($start, $end);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function dont_give_me_five($start, $end) {
+    $total_numbers = 0;
+    for ($i = $start; $i <= $end; $i++) {
+        if (substr_count(strval($i), 5) == 0) {
+            $total_numbers++;
+        }
+    }
+
+    return $total_numbers;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 49. Find the stray number
+
+    >You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+    Create a function which accepts such an array, and returns that single different number.
+    The input array will always be valid! (odd-length >= 3)
+
+    EXAMPLE:
+    NOTES:
+*/
+
+$arr = [4,2,2,2,2];
+
+
+$funzione = stray($arr);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function stray($arr)
+{
+    $number_1 = [$arr[0], 0];   // index 0 is the number index 1 how many times it is in the array
+    $number_2 = [];             // index 0 is the number index 1 how many times it is in the array
+
+    foreach ($arr as $key => $number) {
+        if ($number == $number_1[0]) {
+            $number_1[1]++;
+        } else {
+            $number_2[0] = $number;
+            $number_2[1]++;
+        }
+    }
+
+    if ($number_1[1] < $number_2[1]) {
+        return $number_1[0];
+    }
+    return $number_2[0];
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 50. Breaking chocolate problem
+
+    >Your task is to split the chocolate bar of given dimension n x m into small squares.
+     Each square is of size 1x1 and unbreakable. Implement a function that will return minimum number of breaks needed.
+    EXAMPLE:
+        For example if you are given a chocolate bar of size 2 x 1 you can split it to single squares in just one break,
+         but for size 3 x 1 you must do two breaks.
+    NOTES:
+*/
+
+$n = 3;
+$m = 1;
+
+
+$funzione = breakChocolate($n, $m);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function breakChocolate($n, $m) {
+    $squares = $n * $m - 1;
+
+    return $squares;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 51. String ends with
+
+    >Complete the solution so that it returns true if the first argument(string)
+     passed in ends with the 2nd argument (also a string).
+    EXAMPLE:
+        solution('abc', 'bc') // returns true
+        solution('abc', 'd') // returns false
+    NOTES:
+*/
+
+$str = 'abc\n';
+$ending = 'abc';
+
+
+$funzione = solution($str, $ending);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function solution($str, $ending) {
+    $index_string = strlen($str);
+
+    for ($i = (strlen($ending) - 1); $i >= 0; $i--) {
+        $index_string--;
+
+        if ($ending[$i] != $str[$index_string]) {
+            return false;
+        }
+    }
+    return true;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 
