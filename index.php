@@ -2068,6 +2068,129 @@ function duplicateCount($text) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/* 58. Stop gninnipS My sdroW!
+
+    >Write a function that takes in a string of one or more words, and returns the same string,
+     but with all five or more letter words reversed (Just like the name of this Kata).
+    EXAMPLE:
+        spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw"
+        spinWords( "This is a test") => returns "This is a test"
+        spinWords( "This is another test" )=> returns "This is rehtona test"
+    NOTES:
+        Strings passed in will consist of only letters and spaces.
+        Spaces will be included only when more than one word is present.
+*/
+
+$str = 'Hey fellow warriors';
+
+$funzione = spinWords($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function spinWords(string $str): string {
+    $arr_str = explode(' ', $str);
+
+    $new_array = [];
+    foreach ($arr_str as $word) {
+        if (strlen($word) >= 5) {
+            $new_array[] = strrev($word);
+        } else {
+            $new_array[] = $word;
+        }
+    }
+
+    $new_string = implode(' ',$new_array);
+
+    return $new_string;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 59. Duplicate Encoder
+
+    >The goal of this exercise is to convert a string to a new string where each character in the new string
+     is "(" if that character appears only once in the original string,
+     or ")" if that character appears more than once in the original string.
+     Ignore capitalization when determining if a character is a duplicate.
+    EXAMPLE:
+        "din"      =>  "((("
+        "recede"   =>  "()()()"
+        "Success"  =>  ")())())"
+        "(( @"     =>  "))(("
+    NOTES:
+*/
+
+$word = 'Success';
+
+$funzione = duplicate_encode($word);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function duplicate_encode($word) {
+    $word_lw = strtolower($word);
+
+	$new_string = '';
+    for ($i = 0; $i < strlen($word_lw); $i++) {
+        if (substr_count($word_lw, $word_lw[$i]) > 1) {
+            $new_string .= ')';
+        } else {
+            $new_string .= '(';
+        }
+    }
+
+    return $new_string;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 60. Who likes it
+
+    >You probably know the "like" system from Facebook and other pages.
+     People can "like" blog posts, pictures or other items.
+      We want to create the text that should be displayed next to such an item.
+    Implement a function likes :: [String] -> String, which must take in input array,
+     containing the names of people who like an item. It must return the display text as shown in the examples:
+    EXAMPLE:
+        likes [] // must be "no one likes this"
+        likes ["Peter"] // must be "Peter likes this"
+        likes ["Jacob", "Alex"] // must be "Jacob and Alex like this"
+        likes ["Max", "John", "Mark"] // must be "Max, John and Mark like this"
+        likes ["Alex", "Jacob", "Mark", "Max"] // must be "Alex, Jacob and 2 others like this"
+    NOTES:
+        For 4 or more names, the number in and 2 others simply increases.
+*/
+
+$names = ["Alex", "Jacob", "Mark", "Max"];
+// $names = [];
+
+$funzione = likes($names);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function likes($names) {
+    switch (count($names)) {
+        case 0:
+            return 'no one likes this';
+        case 1:
+            return $names[0] . ' likes this';
+        case 2:
+            return $names[0] . ' and ' . $names[1] . ' like this';
+        case 3:
+            return $names[0] . ', ' . $names[1] . ' and ' . $names[2] . ' like this';
+        default:
+            $number_minus_2 = count($names) - 2;
+            return $names[0] . ', ' . $names[1] . ' and ' . $number_minus_2 . ' others like this';
+    }
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

@@ -76,3 +76,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 55. Decode the Morse code
 56. Find The Parity Outlier
 57. Counting Duplicates
+58. Stop gninnipS My sdroW!
+59. Duplicate Encoder
+60. Who likes it
