@@ -79,3 +79,8 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 58. Stop gninnipS My sdroW!
 59. Duplicate Encoder
 60. Who likes it
+61. Equal Sides Of An Array
+62. Tribonacci Sequence
+63. Bit Counting
+64. Replace With Alphabet Position
+65. Array.diff

@@ -14,7 +14,7 @@ $b = 8;
 $funzione = multiply($a, $b);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function multiply($a, $b) {
     return $a * $b;
@@ -35,7 +35,7 @@ $n = 2;
 $funzione = even_or_odd($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function even_or_odd(int $n): string {
     if ($n % 2 == 0) {
@@ -61,7 +61,7 @@ $arr = [-1, 2, 3, 4, -5];
 $funzione = positive_sum($arr);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function positive_sum($arr) {
     if (empty($arr)) {
@@ -95,7 +95,7 @@ $n = 14;
 $funzione = opposite($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function opposite($n) {
     return $n * -1;
@@ -116,7 +116,7 @@ $s = 'place';
 $funzione = remove_char($s);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function remove_char(string $s): string {
     return substr($s, 1, -1);
@@ -143,7 +143,7 @@ $num = -20;
 $funzione = makeNegative($num);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function makeNegative(float $num) : float {
     if ($num <= 0) {
@@ -170,7 +170,7 @@ $str = '*';
 $funzione = repeatStr($n, $str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function repeatStr($n, $str)
 {
@@ -196,7 +196,7 @@ $s = '8 j 8   mBliB8g  imjB8B8  jl  B';
 $funzione = no_space($s);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function no_space(string $s): string {
     return str_replace(' ', '', $s);
@@ -219,7 +219,7 @@ $arr = [3, 5, 10, 1, 4, 55];
 $funzione = smallestInteger($arr);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function smallestInteger($arr) {
     $smallest_number = $arr[0];
@@ -252,7 +252,7 @@ $n = 8;
 $funzione = summation($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function summation($n) {
     $sum = 0;
@@ -278,7 +278,7 @@ $bool = true;
 $funzione = boolToWord($bool);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function boolToWord($bool) {
     if ($bool === true) {
@@ -302,7 +302,7 @@ $str = 'world';
 $funzione = solution($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function solution($str) {
@@ -338,7 +338,7 @@ $year = 50;
 $funzione = centuryFromYear($year);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function centuryFromYear($year)
@@ -378,7 +378,7 @@ $val2 = 7;
 $funzione = basicOp($op, $val1, $val2);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function basicOp($op, $val1, $val2)
@@ -413,7 +413,7 @@ $num = 4;
 $funzione = numberToString($num);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function numberToString($num)
@@ -438,7 +438,7 @@ $input = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
 $funzione = countPositivesSumNegatives($input);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function countPositivesSumNegatives($input) {
@@ -478,7 +478,7 @@ $haystack = ['3', '123124234', null, 'needle', 'world', 'hay', 2, '3', true, fal
 $funzione = findNeedle($haystack);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function findNeedle($haystack) {
@@ -508,7 +508,7 @@ $numbers = [0, 3, 4, 5];
 $funzione = square_sum($numbers);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function square_sum($numbers) : int {
@@ -539,7 +539,7 @@ $t = 11.8;
 $funzione = litres($t);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function litres($t) {
@@ -562,7 +562,7 @@ $x = [4, 1, 1, 1, 4];
 $funzione = maps($x);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function maps($x)
@@ -595,7 +595,7 @@ $str = '1234';
 $funzione = stringToNumber($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function stringToNumber($str) {
@@ -621,7 +621,7 @@ $p2 = 'rock';
 $funzione = rpc($p1, $p2);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function rpc($p1, $p2) {
@@ -667,7 +667,7 @@ $c = 2;
 $funzione = expressionMatter($a, $b, $c);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function expressionMatter($a, $b, $c) {
@@ -708,7 +708,7 @@ $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $funzione = removeEveryOther($array);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function removeEveryOther($array) {
@@ -742,7 +742,7 @@ $letter = 'o';
 $funzione = strCount($str, $letter);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function strCount($str, $letter) {
@@ -807,7 +807,7 @@ $ages = [82, 15, 6, 38, 35];
 $funzione = differenceInAges($ages);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function differenceInAges($ages) {
@@ -845,7 +845,7 @@ $str = 'abracadabra';
 $funzione = getCount($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function getCount($str) {
@@ -877,7 +877,7 @@ $s = 'ZpglnRxqenU';
 $funzione = accum($s);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function accum($s) {
@@ -918,7 +918,7 @@ $text = 'testing';
 $funzione = getMiddle($text);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function getMiddle($text) {
@@ -953,7 +953,7 @@ $numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4";
 $funzione = highAndLow($numbers);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function highAndLow($numbers)
@@ -984,7 +984,7 @@ $n = 3024;
 $funzione = descendingOrder($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function descendingOrder(int $n): int {
@@ -1011,7 +1011,7 @@ $str = 'turns out random test cases are easier than writing out basic ones';
 $funzione = findShort($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function findShort($str) {
@@ -1079,7 +1079,7 @@ $string = 'Dermatoglyphics';
 $funzione = isIsogram($string);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function isIsogram($string) {
     $string_lowercase = strtolower($string);
@@ -1110,7 +1110,7 @@ $string = 'How can mirrors be real if our eyes aren\'t real';
 $funzione = capitalize($string);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 function capitalize($string)
 {
@@ -1151,7 +1151,7 @@ $p = 5000;
 $funzione = nbYear($p0, $percent, $aug, $p);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function nbYear($p0, $percent, $aug, $p) {
@@ -1186,7 +1186,7 @@ $dna = "TTTT";
 $funzione = DNA_strand($dna);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function DNA_strand($dna) {
@@ -1228,7 +1228,7 @@ $b = "yestheyarehere";
 $funzione = longest($a, $b);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function longest($a, $b) {
@@ -1277,7 +1277,7 @@ $n = 1;
 $funzione = rowSumOddNumbers($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function rowSumOddNumbers($n) {
@@ -1340,7 +1340,7 @@ $s = 'kkkwwwaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyzuuuuu';
 $funzione = printerError($s);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function printerError($s) {
@@ -1389,7 +1389,7 @@ $arr = [1,1,1,1];
 $funzione = binaryArrayToNumber($arr);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function binaryArrayToNumber($arr) {
@@ -1430,7 +1430,7 @@ $bus_stops = [
 $funzione = number($bus_stops);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function number($bus_stops) {
@@ -1464,7 +1464,7 @@ $integer = 13;
 $funzione = divisors($integer);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function divisors($integer) {
@@ -1505,7 +1505,7 @@ $n = 3;
 $funzione = series_sum($n);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function series_sum($n) {
@@ -1544,7 +1544,7 @@ $str = 'double  spaces';
 $funzione = reverseWords($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function reverseWords($str) {
@@ -1580,7 +1580,7 @@ $a = [2, 5, 34, 6];
 $funzione = odd_or_even($a);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function odd_or_even(array $a): string {
@@ -1618,7 +1618,7 @@ $end = 17;
 $funzione = dont_give_me_five($start, $end);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function dont_give_me_five($start, $end) {
@@ -1650,7 +1650,7 @@ $arr = [4,2,2,2,2];
 $funzione = stray($arr);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function stray($arr)
@@ -1692,7 +1692,7 @@ $m = 1;
 $funzione = breakChocolate($n, $m);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function breakChocolate($n, $m) {
@@ -1749,7 +1749,7 @@ $seq = [20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5];
 $funzione = findIt($seq);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function findIt(array $seq) : int
@@ -1798,7 +1798,7 @@ $number = 10;
 $funzione = solution($number);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function solution($number) {
@@ -1832,7 +1832,7 @@ $num = 999;
 $funzione = persistence($num);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function persistence(int $num): int {
@@ -1888,7 +1888,7 @@ $code = '.... . -.--   .--- ..- -.. .';
 $funzione = decode_morse($code);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function decode_morse(string $code): string {
@@ -1980,7 +1980,7 @@ $integers = [160, 3, 1719, 19, 11, 13, -21];
 $funzione = find($integers);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function find($integers) {
@@ -2035,7 +2035,7 @@ $text = 'aabBcde';
 $funzione = duplicateCount($text);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function duplicateCount($text) {
@@ -2087,7 +2087,7 @@ $str = 'Hey fellow warriors';
 $funzione = spinWords($str);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function spinWords(string $str): string {
@@ -2128,7 +2128,7 @@ $word = 'Success';
 $funzione = duplicate_encode($word);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function duplicate_encode($word) {
@@ -2171,7 +2171,7 @@ $names = ["Alex", "Jacob", "Mark", "Max"];
 $funzione = likes($names);
 echo '<pre>';
 print_r($funzione);
-echo '</pre';
+echo '</pre>';
 
 
 function likes($names) {
@@ -2188,6 +2188,234 @@ function likes($names) {
             $number_minus_2 = count($names) - 2;
             return $names[0] . ', ' . $names[1] . ' and ' . $number_minus_2 . ' others like this';
     }
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 61. Equal Sides Of An Array
+
+    >You are going to be given an array of integers.
+     Your job is to take that array and find an index N where the sum of the integers to the left of N
+     is equal to the sum of the integers to the right of N.
+     If there is no index that would make this happen, return -1.
+    EXAMPLE:
+        Let's say you are given the array {1,2,3,4,3,2,1}: Your function will return the index 3,
+        because at the 3rd position of the array, the sum of left side of the index ({1,2,3})
+        and the sum of the right side of the index ({3,2,1}) both equal 6.
+
+        Let's look at another one.
+        You are given the array {1,100,50,-51,1,1}: Your function will return the index 1,
+        because at the 1st position of the array, the sum of left side of the index ({1})
+        and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
+
+        Last one:
+        You are given the array {20,10,-80,10,10,15,35}
+        At index 0 the left side is {}
+        The right side is {10,-80,10,10,15,35}
+        They both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)
+        Index 0 is the place where the left side and right side are equal.
+
+    NOTES:
+        If you do not find an index that fits the rules, then you will return -1
+        If you are given an array with multiple answers, return the lowest correct index.
+*/
+
+$arr = [1,2,3,4,3,2,1];
+
+$funzione = find_even_index($arr);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function find_even_index($arr) {
+    foreach ($arr as $index => $number) {
+        $arr_left = array_slice($arr, 0, $index);
+        $arr_right = array_slice($arr, $index + 1);
+
+        $arr_left_sum = array_sum($arr_left);
+        $arr_right_sum = array_sum($arr_right);
+
+        if ($arr_left_sum == $arr_right_sum) {
+            return $index;
+        }
+    }
+
+    return -1;
+}
+// alternative solution
+function find_even_index($arr) {
+    $arr_copy = $arr;
+
+    $number_left_sum = 0;
+    foreach ($arr_copy as $key => $number) {
+        unset($arr_copy[$key]);
+
+        if ($number_left_sum == array_sum($arr_copy)) {
+            return $key;
+        } else {
+            $number_left_sum += $number;
+        }
+    }
+
+    return -1;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 62. Tribonacci Sequence
+
+    >As the name may already reveal, it works basically like a Fibonacci,
+     but summing the last 3 (instead of 2) numbers of the sequence to generate the next.
+     You need to create a fibonacci function that given a signature array/list,
+     returns the first n elements - signature included of the so seeded sequence.
+    EXAMPLE:
+        [1, 1, 1] => [1, 1 ,1, 3, 5, 9, 17, 31, ...]
+        [0, 0, 1] => [0, 0, 1, 1, 2, 4, 7, 13, 24, ...]
+    NOTES:
+        Signature will always contain 3 numbers
+        n will always be a non-negative number
+        if n == 0, then return an empty array
+*/
+
+$signature = [1,1,1];
+$n = 10;
+
+$funzione = tribonacci($signature, $n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function tribonacci($signature, $n) {
+    while (sizeof($signature) < $n) {
+        $signature[] = array_sum(array_slice($signature, -3));
+    }
+
+    return array_slice($signature, 0, $n);
+}
+// alternative solution
+function tribonacci($signature, $n) {
+    if ($n == 0) {
+        return [];
+    } elseif ($n <= 3) {
+        return array_slice($signature, 0, $n);
+    }
+
+    $arr = $signature;
+    for ($i = 3; $i < $n; $i++) {
+        $new_number = $arr[count($arr) - 1] + $arr[count($arr) - 2] + $arr[count($arr) - 3]; // the new number is the sum of the last 3
+        $arr[] = $new_number;
+    }
+
+    return $arr;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 63. Bit Counting
+
+    >Write a function that takes an integer as input,
+     and returns the number of bits that are equal to one in the binary representation of that number.
+    EXAMPLE:
+        The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+    NOTES:
+        You can guarantee that input is non-negative.
+*/
+
+
+$n = 9;
+
+$funzione = countBits($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function countBits($n)
+{
+    return substr_count(decbin($n), '1');
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 64. Replace With Alphabet Position
+
+    >In this kata you are required to, given a string,
+     replace every letter with its position in the alphabet.
+    EXAMPLE:
+        alphabet_position('The sunset sets at twelve o\' clock.') =>
+        "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+    NOTES:
+*/
+
+
+$s = 'The sunset sets at twelve o\' clock.';
+
+$funzione = alphabet_position($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function alphabet_position(string $s): string {
+    $str = str_replace(' ', '', strtolower($s));
+
+    $alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    $arr_str = [];
+    for ($i = 0; $i < strlen($str); $i++) {
+        if (strpos($alphabet, $str[$i]) !== false) {
+            $arr_str[] = strpos($alphabet, $str[$i]) + 1;
+        }
+    }
+
+    return implode(' ', $arr_str);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 65. Array.diff
+
+    >Your goal in this kata is to implement a difference function,
+     which subtracts one list from another and returns the result.
+     It should remove all values from list a, which are present in list b.
+     If a value is present in b, all of its occurrences must be removed from the other:
+    EXAMPLE:
+        arrayDiff([1,2],[1]) == [2]
+        arrayDiff([1,2,2,2,3],[2]) == [1,3]
+    NOTES:
+*/
+
+
+$a = [1,2,2,2,3];
+$b = [2,3];
+
+$funzione = arrayDiff($a, $b);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function arrayDiff($a, $b) {
+    return array_values(array_diff($a, $b));
+}
+// alternative solution without array_diff()
+function arrayDiff($a, $b) {
+    if (empty($b)) {
+        return $a;
+    }
+
+    $a_c = $a;
+    foreach ($b as $number_del) {
+        foreach ($a_c as $key2 => $number) {
+            if ($number === $number_del) {
+                unset($a_c[$key2]);
+            }
+        }
+    }
+
+    return array_values($a_c);
 }
 //-----------------------------------------------------------------------------------------------------
 
