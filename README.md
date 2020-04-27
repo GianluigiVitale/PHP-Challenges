@@ -86,3 +86,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 65. Array.diff
 66. Unique In Order
 67. Consecutive strings
+68. Are they the same
+69. Find the missing letter
