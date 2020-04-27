@@ -84,3 +84,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 63. Bit Counting
 64. Replace With Alphabet Position
 65. Array.diff
+66. Unique In Order
+67. Consecutive strings

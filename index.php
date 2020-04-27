@@ -2419,6 +2419,103 @@ function arrayDiff($a, $b) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/* 66. Unique In Order
+
+    >Implement the function unique_in_order which takes as argument a sequence and
+     returns a list of items without any elements with the same value next to each other
+     and preserving the original order of elements.
+    EXAMPLE:
+        uniqueInOrder("AAAABBBCCDAABBB") == {'A', 'B', 'C', 'D', 'A', 'B'}
+        uniqueInOrder("ABBCcAD")         == {'A', 'B', 'C', 'c', 'A', 'D'}
+        uniqueInOrder([1,2,2,3,3])       == {1,2,3}
+    NOTES:
+*/
+
+
+// $iterable = "AAAABBBCCDAABBB";
+// $iterable = "ABBCcAD";
+$iterable = [1,2,2,2,3];
+
+$funzione = uniqueInOrder($iterable);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function uniqueInOrder($iterable) {
+    if (empty($iterable)) {
+        return [];
+    }
+    if (gettype($iterable) == 'array') {
+        $iterable = implode('', $iterable);
+    }
+
+    $arr_unique = [];
+    for ($i = 0; $i < strlen($iterable); $i++) {
+        if ($iterable[$i] != $iterable[$i+1]) {
+            $arr_unique[] = $iterable[$i];
+        }
+    }
+
+    return $arr_unique;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 67. Consecutive strings
+
+    >You are given an array of string inputs strarr and an integer k.
+     Your task is to return the longest possible string that can be derived
+     by combining k consecutive elements of the input strarr.
+    EXAMPLE:
+        longest_consec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)
+        should return "abigailtheta"
+    NOTES:
+        In the case of there being multiple possible matches, only the first one will be considered correct.
+        In any of the following cases, the return value should be an empty string "":
+            strarr.length === 0
+            strarr.length < k
+            k <= 0
+*/
+
+
+$strarr = ["zone", "abigail", "theta", "form", "libe", "zas"];
+$k = 2;
+
+$funzione = longestConsec($strarr, $k);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function longestConsec($strarr, $k) {
+    $arr_sorted = insertionSort($strarr, count($strarr));
+
+    $new_string = '';
+    for ($i = 0; $i < $k; $i++) {
+        $new_string .= $arr_sorted[$i];
+    }
+
+    return $new_string;
+}
+
+function insertionSort($arr, $n) {      // insertion sort algorithm to order an array descending based on string length
+    for ($i = 1; $i < $n; $i++) {
+        $key = $arr[$i];
+        $j = $i-1;
+
+        while ($j >= 0 && strlen($arr[$j]) < strlen($key)) {
+            $arr[$j + 1] = $arr[$j];
+            $j = $j - 1;
+        }
+        $arr[$j + 1] = $key;
+    }
+
+    return $arr;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 
