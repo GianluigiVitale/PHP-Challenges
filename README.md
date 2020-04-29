@@ -88,3 +88,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 67. Consecutive strings
 68. Are they the same
 69. Find the missing letter
+70. Find the unique number
+71. Build Tower
