@@ -90,3 +90,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 69. Find the missing letter
 70. Find the unique number
 71. Build Tower
+72. Convert string to camel case
+73. Count the smiley faces
