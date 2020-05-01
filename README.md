@@ -94,3 +94,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 73. Count the smiley faces
 74. Highest Scoring Word
 75. Write Number in Expanded Form
+76. Bouncing Balls
+77. Does my number look big in this
+78. Which are in

@@ -2898,19 +2898,155 @@ function expanded_form($n) {
     for ($i = 0; $i < strlen($n_s); $i++) {
         if ($n_s[$i] != '0') {
 
-            $number = intval(substr($n_s, $i));
-            $number_to_divide = '1';
-            for ($j = 1; $j < strlen($number); $j++) {
-                $number_to_divide .= '0';
-            }
+            $number = '';
+            $number .= $n_s[$i];
 
-            $round_num = floor($number/intval($number_to_divide)) * intval($number_to_divide);
-            $numbers[] = ($round_num);
+            $number_lng = strlen(substr($n_s, $i));
+            for ($j = 1; $j < $number_lng; $j++) {
+                $number .= '0';
+            }
+            $numbers[] = $number;
+            $number = '';
         }
     }
     $str = implode(' + ', $numbers);
 
     return $str;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 76. Bouncing Balls
+
+    >A child is playing with a ball on the nth floor of a tall building. The height of this floor, h, is known.
+     He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+     His mother looks out of a window 1.5 meters from the ground.
+     How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing?
+
+     Three conditions must be met for a valid experiment:
+        Float parameter "h" in meters must be greater than 0
+        Float parameter "bounce" must be greater than 0 and less than 1
+        Float parameter "window" must be less than h.
+     If all three conditions above are fulfilled, return a positive integer, otherwise return -1.
+    EXAMPLE:
+        - h = 3, bounce = 0.66, window = 1.5, result is 3
+        - h = 3, bounce = 1, window = 1.5, result is -1
+        (Condition 2) not fulfilled).
+    NOTES:
+*/
+
+
+$h = 3;
+$bounce = 0.66;
+$window = 1.5;
+
+$funzione = bouncingBall($h, $bounce, $window);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+function bouncingBall($h, $bounce, $window) {
+    if ($h <= 0 || $bounce <= 0 || $bounce >= 1 || $window >= $h) {
+        return -1;
+    }
+
+    $bounces = 1;
+    while ($window <= $h) {
+        $h *= $bounce;
+
+        if ($window < $h) {
+            $bounces += 2;
+        }
+    }
+
+    return $bounces;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 77. Does my number look big in this
+
+    >A Narcissistic Number is a number which is the sum of its own digits,
+     each raised to the power of the number of digits in a given base.
+     In this Kata, we will restrict ourselves to decimal (base 10).
+     Your code must return true or false depending upon whether the given number is a Narcissistic number in base 10.
+    EXAMPLE:
+        take 153 (3 digits):
+        1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+
+        and 1634 (4 digits):
+        1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634
+    NOTES:
+        Error checking for text strings or other invalid inputs is not required,
+        only valid integers will be passed into the function.
+*/
+
+
+$value = 7;
+
+$funzione = narcissistic($value);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+function narcissistic($value) {
+    $arr = str_split($value);
+    $power = strlen($value);
+
+    $sum = 0;
+    foreach ($arr as $number) {
+        $sum += pow($number, $power);
+    }
+
+    if ($sum == $value) {
+        return true;
+    }
+
+    return false;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/* 78. Which are in
+
+    >Given two arrays of strings a1 and a2 return a sorted array r
+     in lexicographical order of the strings of a1 which are substrings of strings of a2.
+    EXAMPLE:
+        #Example 1: a1 = ["arp", "live", "strong"]
+            a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+            returns ["arp", "live", "strong"]
+
+        #Example 2: a1 = ["tarp", "mice", "bull"]
+            a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
+            returns []
+    NOTES:
+        Beware: r must be without duplicates.
+*/
+
+
+// $array1 = ["arp", "live", "strong"];
+$array1 = ["live", "strong", "arp"];
+$array2 = ["lively", "alive", "harp", "sharp", "armstrong"];
+
+$funzione = inArray($array1, $array2);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function inArray($array1, $array2) {
+
+    $words_included = [];
+    foreach ($array1 as $word1) {
+        $counter = true;
+        foreach ($array2 as $word2) {
+            if (substr_count($word2, $word1) > 0 && $counter === true) {
+                $words_included[] = $word1;
+                $counter = false;
+            }
+        }
+    }
+    sort($words_included);
+
+    return $words_included;
 }
 //-----------------------------------------------------------------------------------------------------
 

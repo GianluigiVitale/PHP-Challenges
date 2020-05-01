@@ -26,14 +26,15 @@ function expanded_form($n) {
     for ($i = 0; $i < strlen($n_s); $i++) {
         if ($n_s[$i] != '0') {
 
-            $number = intval(substr($n_s, $i));
-            $number_to_divide = '1';
-            for ($j = 1; $j < strlen($number); $j++) {
-                $number_to_divide .= '0';
-            }
+            $number = '';
+            $number .= $n_s[$i];
 
-            $round_num = floor($number/intval($number_to_divide)) * intval($number_to_divide);
-            $numbers[] = ($round_num);
+            $number_lng = strlen(substr($n_s, $i));
+            for ($j = 1; $j < $number_lng; $j++) {
+                $number .= '0';
+            }
+            $numbers[] = $number;
+            $number = '';
         }
     }
     $str = implode(' + ', $numbers);
