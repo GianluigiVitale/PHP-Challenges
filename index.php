@@ -3050,6 +3050,178 @@ function inArray($array1, $array2) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/* 79. Detect Pangram
+
+    >A pangram is a sentence that contains every single letter of the alphabet at least once.
+    Given a string, detect whether or not it is a pangram. Return True if it is, False if not.
+    EXAMPLE:
+        The sentence "The quick brown fox jumps over the lazy dog" is a pangram,
+        because it uses the letters A-Z at least once (case is irrelevant).
+    NOTES:
+        Ignore numbers and punctuation.
+*/
+
+
+$string = "The quick brown fox jumps over the lazy dog.";
+
+$funzione = detect_pangram($string);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function detect_pangram($string) {
+    $alphabet = range('a', 'z');
+
+    foreach ($alphabet as $letter) {
+        if (strpos(strtolower($string), $letter) === false) {
+            return false;
+        }
+    }
+
+    return true;
+}
+// another method
+function detect_pangram($string) {
+    $alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+    $count = 0;
+    for ($i = 0; $i < strlen($alphabet); $i++) {
+        if (substr_count(strtolower($string), $alphabet[$i]) > 0) {
+            $count += 1;
+        }
+    }
+
+    if ($count == 26) {
+        return true;
+    }
+    return false;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  80. Is a number prime
+
+    >Define a function that takes an integer argument and returns logical value true or false
+     depending on if the integer is a prime.
+     Per Wikipedia, a prime number (or a prime) is a natural number greater than
+     1 that has no positive divisors other than 1 and itself.
+    EXAMPLE:
+        is_prime(1)     false
+        is_prime(2)     true
+        is_prime(-1)    false
+    NOTES:
+        You can assume you will be given an integer input.
+        You can not assume that the integer will be only positive.
+        You may be given negative numbers as well (or 0).
+        There are no fancy optimizations required, but still the most trivial solutions might time out.
+        Try to find a solution which does not loop all the way up to n.
+*/
+
+
+$n = 8;
+
+$funzione = is_prime($n);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function is_prime($n) {
+    if ($n <= 1) {
+        return false;
+    }
+
+    $root = sqrt($n);
+    for ($i = 2; $i <= $root; $i++) {
+        if ($n % $i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  81. Mexican Wave
+
+    >In this simple Kata your task is to create a function that turns a string into a Mexican Wave.
+        The wave (known as the Mexican wave in the English-speaking world outside North America)
+        is an example of metachronal rhythm achieved in a packed stadium when successive
+        groups of spectators briefly stand, yell, and raise their arms.
+        Immediately upon stretching to full height, the spectator returns to the usual seated position.
+    You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
+    EXAMPLE:
+        wave("hello") => []string{"Hello", "hEllo", "heLlo", "helLo", "hellO"}
+    NOTES:
+        1.  The input string will always be lower case but maybe empty.
+        2.  If the character in the string is whitespace then pass over it as if it was an empty seat.
+*/
+
+
+$people = " gap ";
+
+$funzione = wave($people);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function wave($people) {
+    $wave = [];
+    for ($i = 0; $i < strlen($people); $i++) {
+        if ($people[$i] != ' ') {
+            $word = $people;
+            $word[$i] = strtoupper($word[$i]);
+
+            $wave[] = $word;
+        }
+    }
+
+    return $wave;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  82. Split Strings
+
+    >Create a funcion so that it splits the string into pairs of two characters.
+     If the string contains an odd number of characters then it should replace
+     the missing second character of the final pair with an underscore ('_').
+    EXAMPLE:
+        solution('abc') // should return ['ab', 'c_']
+        solution('abcdef') // should return ['ab', 'cd', 'ef']
+    NOTES:
+*/
+
+
+$str = "abcdef";
+
+$funzione = solution($str);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function solution($str) {
+    if (strlen($str) % 2 != 0) {
+        $str .= '_';
+    }
+    return str_split($str, 2);
+}
+// alternative method
+function solution($str) {
+    $arr = [];
+    for ($i = 0; $i < strlen($str); $i += 2) {
+        $arr[] = substr($str, $i, 2);
+    }
+
+    if (strlen($str) % 2 != 0) {
+        $arr[count($arr)-1] .= '_';
+    }
+
+    return $arr;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

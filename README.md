@@ -97,3 +97,7 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 76. Bouncing Balls
 77. Does my number look big in this
 78. Which are in
+79. Detect Pangram
+80. Is a number prime
+81. Mexican Wave
+82. Split Strings
