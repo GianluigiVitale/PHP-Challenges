@@ -3222,6 +3222,220 @@ function solution($str) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  83. IP Validation
+
+    >Write an algorithm that will identify valid IPv4 addresses in dot-decimal format.
+     IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+     Input to the function is guaranteed to be a single string.
+    EXAMPLE:
+        Valid inputs:
+        1.2.3.4
+        123.45.67.89
+
+        Invalid inputs:
+        1.2.3
+        1.2.3.4.5
+        123.456.78.90
+        123.045.067.089
+    NOTES:
+        Note that leading zeros (e.g. 01.02.03.04) are considered invalid.
+*/
+
+
+$str = 'adb.255.255.255';
+$str = '21.129.168.66';
+// $str = 'abc.def.ghi.jkl';
+
+$funzione = isValidIP($str);
+echo $funzione ? 'true' : 'false';  // to print a boolean value
+
+
+function isValidIP($str) {
+    $arr = explode('.', $str);
+
+    if (count($arr) != 4 || substr_count($str, ' ') > 0) {
+        return false;
+    }
+
+    foreach ($arr as $num) {
+        if (!is_numeric($num) || $num < 0 || $num > 255) {
+            return false;
+        }
+    }
+
+    return true;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  84. WeIrD StRiNg CaSe
+
+    >Write a function that accepts a string, and returns the same string
+     with all even indexed characters in each word upper cased,
+     and all odd indexed characters in each word lower cased.
+    EXAMPLE:
+        toWeirdCase("String"); // => returns "StRiNg"
+        toWeirdCase("Weird string case"); // => returns "WeIrD StRiNg CaSe"
+    NOTES:
+        The passed in string will only consist of alphabetical characters and spaces(' ').
+        Spaces will only be present if there are multiple words.
+        Words will be separated by a single space(' ').
+*/
+
+
+$string = 'Hello world foo bar baz';
+$string = 'wEll i GuesS you passed';
+
+$funzione = toWeirdCase($string);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function toWeirdCase($string) {
+    $arr = explode(' ', $string);
+
+    $arr_words = [];
+    foreach ($arr as $word) {
+        $new_word = '';
+        for ($i = 0; $i < strlen($word); $i++) {
+            if ($i % 2 == 0) {
+                $new_word .= strtoupper($word[$i]);
+            } else {
+                $new_word .= strtolower($word[$i]);
+            }
+        }
+        $arr_words[] = $new_word;
+        $new_word = '';
+    }
+
+    return implode(' ', $arr_words);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  85. CamelCase Method
+
+    >Write simple .camelCase method for strings.
+     All words must have their first letter capitalized without spaces.
+    EXAMPLE:
+        camel_case("hello case"); // => "HelloCase"
+        camel_case("camel case word"); // => "CamelCaseWord"
+    NOTES:
+*/
+
+
+$s = "camel case method";
+
+$funzione = camel_case($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function camel_case(string $s): string {
+    return str_replace(' ', '', ucwords($s));
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  86. Find the missing term in an Arithmetic Progression
+
+    >An Arithmetic Progression is defined as one in which there is a constant difference between
+     the consecutive terms of a given series of numbers.
+     You are provided with consecutive elements of an Arithmetic Progression.
+     There is however one hitch: exactly one term from the original series is missing
+     from the set of numbers which have been given to you.
+     The rest of the given series is the same as the original AP. Find the missing term.
+     You have to write a function that receives a list, list size will always be at least 3 numbers.
+     The missing term will never be the first or last one.
+    EXAMPLE:
+        findMissing([1, 3, 5, 9, 11]) == 7
+    NOTES:
+*/
+
+
+$list = [1, 2, 3, 5];
+
+$funzione = findMissing($list);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function findMissing($list) {
+    $differences = [];
+    for ($i = 1; $i < count($list); $i++) {
+        $differences[] = $list[$i] - $list[$i-1];
+    }
+
+    if ($differences[0] > 0) {
+        sort($differences);
+    } else {
+        rsort($differences);
+    }
+
+    $missing_num = 0;
+    for ($i = 1; $i < count($list); $i++) {
+        if ($list[$i] - $list[$i-1] != $differences[0]) {
+            $missing_num = $list[$i] - $differences[0];
+        }
+    }
+
+    return $missing_num;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  87. Sums of Parts
+
+    >Let us consider this example (array written in general format):
+        ls = [0, 1, 3, 6, 10]
+        Its following parts:
+        ls = [0, 1, 3, 6, 10]
+        ls = [1, 3, 6, 10]
+        ls = [3, 6, 10]
+        ls = [6, 10]
+        ls = [10]
+        ls = []
+     The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0]
+     The function parts_sums will take as parameter a list ls
+     and return a list of the sums of its parts as defined above.
+    EXAMPLE:
+        ls = [1, 2, 3, 4, 5, 6]
+        parts_sums(ls) -> [21, 20, 18, 15, 11, 6, 0]
+    NOTES:
+        Some lists can be long.
+*/
+
+
+$ls = [1, 2, 3, 4, 5, 6];
+
+$funzione = partsSums($ls);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function partsSums($ls) {
+    $start = 0;
+
+    $arr_num = [];
+    while (count($arr_num) <= count($ls)) {
+
+        $number = 0;
+        for ($i = $start; $i < count($ls); $i++) {
+            $number += $ls[$i];
+        }
+        $arr_num[] = $number;
+        $start += 1;
+    }
+
+    return $arr_num;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

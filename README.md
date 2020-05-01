@@ -101,3 +101,8 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 80. Is a number prime
 81. Mexican Wave
 82. Split Strings
+83. IP Validation
+84. WeIrD StRiNg CaSe
+85. CamelCase Method
+86. Find the missing term in an Arithmetic Progression
+87. Sums of Parts
