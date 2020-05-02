@@ -3436,6 +3436,121 @@ function partsSums($ls) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  88. Dashatize it
+
+    >Given a number, return a string with dash'-'marks before and after each odd integer,
+     but do not begin or end the string with a dash mark.
+    EXAMPLE:
+        dashatize(274) -> '2-7-4'
+        dashatize(6815) -> '68-1-5'
+    NOTES:
+*/
+
+
+$num = -28369;
+
+$funzione = dashatize($num);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function dashatize($num) {
+    $str = str_replace(['1', '3', '5', '7', '9', '--'], ['-1-', '-3-', '-5-', '-7-', '-9-', '-'], strval($num));
+
+    return trim($str, '-');
+}
+// alternative method
+function dashatize($num) {
+    if ($num < 0) {
+        $num  *= -1;
+    }
+    if (strlen($num) == 1) {
+        return $num;
+    }
+
+    $num_s = strval($num);
+    $str = '';
+
+    if ($num_s[0] % 2 != 0) {
+        $str .= $num_s[0] . '-';
+    } else {
+        $str .= $num_s[0];
+    }
+
+    for ($i = 1; $i < strlen($num_s)-1; $i++) {
+        if ($num_s[$i] % 2 != 0) {
+            $str .= '-' . $num_s[$i] . '-';
+        } else {
+            $str .= $num_s[$i];
+        }
+    }
+
+    if ($num_s[strlen($num_s)-1] % 2 != 0) {
+        $str .= '-' . $num_s[strlen($num_s)-1];
+    } else {
+        $str .= $num_s[strlen($num_s)-1];
+    }
+
+    return str_replace('--', '-', $str);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  89. Length of missing array
+
+    >You get an array of arrays.
+    If you sort the arrays by their length, you will see, that their length-values are consecutive.
+    But one array is missing!
+
+    You have to write a method, that return the length of the missing array.
+    EXAMPLE:
+        [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+    NOTES:
+        If the array of arrays is null/nil or empty, the method should return 0.
+        When an array in the array is null or empty, the method should return 0 too!
+        There will always be a missing element and its length will be always between the given arrays.
+*/
+
+
+$arrayOfArrays = [
+    [1, 2],
+    [4, 5, 1, 1],
+    [1],
+    [5, 6, 7, 8, 9]
+];
+
+$funzione = getLengthOfMissingArray($arrayOfArrays);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function getLengthOfMissingArray($arrayOfArrays) {
+    if ($arrayOfArrays === null || empty($arrayOfArrays)) {
+        return 0;
+    }
+    foreach ($arrayOfArrays as $arr) {
+        if ($arr === null || empty($arr)) {
+            return 0;
+        }
+    }
+
+    usort($arrayOfArrays, 'sortByLength');
+
+    for ($i = 0; $i < count($arrayOfArrays); $i++) {
+        if (count($arrayOfArrays[$i]) != count($arrayOfArrays[$i+1])+1 ) {
+            return count($arrayOfArrays[$i])-1;
+        }
+    }
+}
+
+function sortByLength($a, $b) {     // function to sort an array in descending order based on sub array length
+    return count($b) - count($a);
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

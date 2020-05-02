@@ -106,3 +106,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 85. CamelCase Method
 86. Find the missing term in an Arithmetic Progression
 87. Sums of Parts
+88. Dashatize it
+89. Length of missing array
