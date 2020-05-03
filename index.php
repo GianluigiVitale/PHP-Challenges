@@ -3551,6 +3551,234 @@ function sortByLength($a, $b) {     // function to sort an array in descending o
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  90. Maze Runner
+
+    >Welcome Adventurer. Your aim is to navigate the maze and reach the finish point without touching any walls.
+     Doing so will kill you instantly!
+     You will be given a 2D array of the maze and an array of directions.
+     Your task is to follow the directions given. If you reach the end point before all your moves have gone,
+     you should return Finish. If you hit any walls or go outside the maze border, you should return Dead.
+     If you find yourself still in the maze after using all the moves, you should return Lost.
+    EXAMPLE:
+        The Maze array will look like
+        maze = [[1,1,1,1,1,1,1],
+                [1,0,0,0,0,0,3],
+                [1,0,1,0,1,0,1],
+                [0,0,1,0,0,0,1],
+                [1,0,1,0,1,0,1],
+                [1,0,0,0,0,0,1],
+                [1,2,1,0,1,0,1]]
+
+        ..with the following key
+     	0 = Safe place to walk
+        1 = Wall
+        2 = Start Point
+        3 = Finish Point
+
+        direction = ["N","N","N","N","N","E","E","E","E","E"] == "Finish"
+    NOTES:
+        1. The Maze array will always be square i.e. N x N but its size and content will alter from test to test.
+        2. The start and finish positions will change for the final tests.
+        3. The directions array will always be in upper case and will be in the format of N = North,
+            E = East, W = West and S = South.
+*/
+
+
+$maze = [
+    [1,1,1,1,1,1,1],
+    [1,0,0,0,0,0,3],
+    [1,0,1,0,1,0,1],
+    [0,0,1,0,0,0,1],
+    [1,0,1,0,1,0,1],
+    [1,0,0,0,0,0,1],
+    [1,2,1,0,1,0,1]
+];
+$directions = ["N","N","N","N","N","E","E","E","E","E"];
+
+$funzione = maze_runner($maze, $directions);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function maze_runner($maze, $directions) {
+    // i find the start position (number 2) and push in $start_number the array and the index to use it later
+    $start_number = [];
+    foreach ($maze as $key => $sub_maze) {
+        foreach ($sub_maze as $key2 => $position) {
+            if ($position == 2) {
+                $start_number[] = $key;
+                $start_number[] = $key2;
+            }
+        }
+    }
+
+    for ($i = 0; $i < count($directions); $i++) {
+        switch ($directions[$i]) {
+            case 'N':
+                $start_number[0] -= 1;
+                break;
+            case 'E':
+                $start_number[1] += 1;
+                break;
+            case 'S':
+                $start_number[0] += 1;
+                break;
+            case 'W':
+                $start_number[1] -= 1;
+                break;
+        }
+
+        $position = $maze[$start_number[0]][$start_number[1]];
+        if ($position == 1 || $position === null) {
+            return 'Dead';
+        } elseif ($position == 3) {
+            return 'Finish';
+        }
+    }
+
+    return 'Lost';
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  91. Consonant value
+
+    >Given a lowercase string that has alphabetic characters only and no spaces,
+     return the highest value of consonant substrings.
+     Consonants are any letters of the alphabet except "aeiou".
+     We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
+    EXAMPLE:
+        For example, for the word "zodiacs", let's cross out the vowels. We get: "z o d ia cs"
+        -- The consonant substrings are: "z", "d" and "cs" and the values are z = 26, d = 4 and cs = 3 + 19 = 22.
+        The highest is 26.
+        solve("zodiacs") = 26
+
+        For the word "strength", solve("strength") = 57
+        -- The consonant substrings are: "str" and "ngth" with values "str" = 19 + 20 + 18 = 57
+        and "ngth" = 14 + 7 + 20 + 8 = 49.
+        The highest is 57.
+    NOTES:
+*/
+
+
+$s = "twelfthstreet";
+
+$funzione = solve($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function solve($s) {
+    $alphabet = [
+        'b' => 2,
+        'c' => 3,
+        'd' => 4,
+        'f' => 6,
+        'g' => 7,
+        'h' => 8,
+        'j' => 10,
+        'k' => 11,
+        'l' => 12,
+        'm' => 13,
+        'n' => 14,
+        'p' => 16,
+        'q' => 17,
+        'r' => 18,
+        's' => 19,
+        't' => 20,
+        'v' => 22,
+        'w' => 23,
+        'x' => 24,
+        'y' => 25,
+        'z' => 26,
+    ];
+
+    $arr_points = [];
+    $points = 0;
+
+    for ($i = 0; $i < strlen($s); $i++) {
+        $letter = $s[$i];
+        if ($alphabet[$letter] !== null) {
+            $points += $alphabet[$letter];
+        } else {
+            $arr_points[] = $points;
+            $points = 0;
+        }
+
+        if ($i == (strlen($s)-1)) {
+            $arr_points[] = $points;
+            $points = 0;
+        }
+    }
+
+    return max($arr_points);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  92. Backwards Read Primes
+
+    >Backwards Read Primes are primes that when read backwards in base 10 (from right to left) are a different prime.
+     (This rules out primes which are palindromes.)
+     Find all Backwards Read Primes between two positive given numbers (both inclusive),
+     the second one always being greater than or equal to the first one.
+     The resulting array or the resulting string will be ordered following the natural order of the prime numbers.
+    EXAMPLE:
+        13 17 31 37 71 73 are Backwards Read Primes
+        13 is such because it's prime and read from right to left writes 31 which is prime too.
+        Same for the others.
+
+        backwardsPrime(2, 100) => [13, 17, 31, 37, 71, 73, 79, 97]
+        backwardsPrime(9900, 10000) => [9923, 9931, 9941, 9967]
+        backwardsPrime(501, 599) => []
+    NOTES:
+        Return only the first backwards-read prime between start and end or 0 if you don't find any
+*/
+
+
+$start = 70000;
+$stop = 70245;
+
+$funzione = backwardsPrime($start, $stop);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+function backwardsPrime($start, $stop) {
+    $arr = [];
+
+    for ($i = $start; $i <= $stop; $i++) {  // loop each number
+
+        $prime = is_prime($i);
+
+        if ($prime) {   // if $i is prime
+            $rev_num = intval(strrev(strval($i)));  // reverse number $i,    i.e. 13 becomes 31
+            $rev_prime = is_prime($rev_num);
+
+            if ($rev_prime && $rev_num != $i) {
+                $arr[] = $i;
+            }
+        }
+    }
+
+    return $arr;
+}
+
+function is_prime($n) {     // if number in input is prime return false else true
+    $root = sqrt($n);
+    for ($j = 2; $j <= $root; $j++) {
+        if ($n % $j == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

@@ -108,3 +108,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 87. Sums of Parts
 88. Dashatize it
 89. Length of missing array
+90. Maze Runner
+91. Consonant value
+92. Backwards Read Primes
