@@ -1,7 +1,7 @@
 #### The challenges are taken from codewars.com
 ### CodeWars Profile Link: https://www.codewars.com/users/GianluigiVitale
 ***
-###### To see my solution for a specific challenge just click it's name and you will be redirected to the file of the challenge.
+**To see my solution for a specific challenge just click it's name and you will be redirected to the file of the challenge.**   
 _For Example: to see my solution for the 10th challenge (Grasshopper - Summation) just click: Grasshopper - Summation_  
 
 **_Each file contains all the original informations given by the author such as the goal of the challenge, the examples provided and the notes_**  
