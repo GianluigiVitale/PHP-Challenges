@@ -13,10 +13,11 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 
 ### Challenge names:
 8kyu
+[]()
 1. [Multiply](List%20Of%20Challenges/1.%20Multiply.php)
-2. Even or Odd
-3. Sum of positive
-4. Opposite number
+2. [Even or Odd](List%20Of%20Challenges/2.%20Even%20or%20Odd.php)
+3. [Sum of positive](List%20Of%20Challenges/3.%20Sum%20of%20positive.php)
+4. [Opposite number](List%20Of%20Challenges/4.%20Opposite%20number.php)
 5. Remove First and Last Character
 6. Return Negative
 7. String repeat
