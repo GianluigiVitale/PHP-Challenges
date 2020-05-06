@@ -13,7 +13,7 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 
 ### Challenge names:
 8kyu
-1. Multiply
+1. [Multiply](blob/master/List%20Of%20Challenges/1.%20Multiply.php)
 2. Even or Odd
 3. Sum of positive
 4. Opposite number
