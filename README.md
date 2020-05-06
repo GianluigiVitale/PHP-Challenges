@@ -113,4 +113,4 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 90. [Maze Runner](List%20Of%20Challenges/90.%20Maze%20Runner.php)
 91. [Consonant value](List%20Of%20Challenges/91.%20Consonant%20value.php)
 92. [Backwards Read Primes](List%20Of%20Challenges/92.%20Backwards%20Read%20Primes.php)
-93. [The Deaf Rats of Hamelin](List%20Of%20Challenges/93.%20The%20Deaf%20Rats%20of%20Hamelin)
+93. [The Deaf Rats of Hamelin](List%20Of%20Challenges/93.%20The%20Deaf%20Rats%20of%20Hamelin.php)
