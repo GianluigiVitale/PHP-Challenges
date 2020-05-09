@@ -116,3 +116,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 93. [The Deaf Rats of Hamelin](List%20Of%20Challenges/93.%20The%20Deaf%20Rats%20of%20Hamelin.php)
 94. [Decipher this!](List%20Of%20Challenges/94.%20Decipher%20this!.php)
 95. [Extract file name](List%20Of%20Challenges/95.%20Extract%20file%20name.php)
+96. [Coordinates Validator](List%20Of%20Challenges/96.%20Coordinates%20Validator.php)
+97. [Nato Words](List%20Of%20Challenges/97.%20Nato%20Words.php)
+98. [Primorial Of a Number](List%20Of%20Challenges/98.%20Primorial%20Of%20a%20Number.php)

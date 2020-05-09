@@ -779,7 +779,7 @@ function strCount($str, $letter) {  // another way
 $str = 'Hello';
 
 $funzione = is_uppercase($str);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function is_uppercase($str) {
@@ -1045,7 +1045,7 @@ function findShort($str) {
 $s = 'xxxoo';
 
 $funzione = XO($s);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function XO($s) {
@@ -1718,7 +1718,7 @@ $ending = 'abc';
 
 
 $funzione = solution($str, $ending);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function solution($str, $ending) {
@@ -2537,7 +2537,7 @@ $a1 = [121, 144, 19, 161, 19, 144, 19, 11];
 $a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
 
 $funzione = comp($a1, $a2);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function comp($a1, $a2) {
@@ -2985,7 +2985,7 @@ function bouncingBall($h, $bounce, $window) {
 $value = 7;
 
 $funzione = narcissistic($value);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 function narcissistic($value) {
     $arr = str_split($value);
@@ -3066,7 +3066,7 @@ function inArray($array1, $array2) {
 $string = "The quick brown fox jumps over the lazy dog.";
 
 $funzione = detect_pangram($string);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function detect_pangram($string) {
@@ -3121,7 +3121,7 @@ function detect_pangram($string) {
 $n = 8;
 
 $funzione = is_prime($n);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function is_prime($n) {
@@ -3248,7 +3248,7 @@ $str = '21.129.168.66';
 // $str = 'abc.def.ghi.jkl';
 
 $funzione = isValidIP($str);
-echo $funzione ? 'true' : 'false';  // to print a boolean value
+echo $funzione ? 'true' : 'false';
 
 
 function isValidIP($str) {
@@ -3919,6 +3919,195 @@ function fileNameExtractor($dirtyFileName) {
     }
 
     return substr($dirtyFileName, $start, $second_dot-$start);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  96. Coordinates Validator
+
+    >You need to create a function that will validate if given parameters are valid geographical coordinates.
+    Latitude (which is first float) can be between 0 and 90, positive or negative.
+    Longitude (which is second float) can be between 0 and 180, positive or negative.
+    EXAMPLE:
+        Here are some valid coordinates:
+        -23, 25
+        24.53525235, 23.45235
+        04, -23.234235
+        43.91343345, 143
+        4, -3
+
+        And some invalid ones:
+        23.234, - 23.4234
+        2342.43536, 34.324236
+        N23.43345, E32.6457
+        99.234, 12.324
+        6.325624, 43.34345.345
+        0, 1,2
+        0.342q0832, 1.2324
+    NOTES:
+        There should be no space between the minus "-" sign and the digit after it.
+        Coordinates can only contain digits, or one of the following symbols (including space after comma) __ -, . __
+*/
+
+
+$coordinates = "-23, 25";
+
+$funzione = isValidCoordinates($coordinates);
+echo $funzione ? 'true' : 'false';
+
+
+
+function isValidCoordinates($coordinates) {
+    $coordinates = strtolower($coordinates);
+
+    $alphabet = range('a', 'z');
+
+    for ($i = 0; $i < strlen($coordinates); $i++) { // if there are letters
+        foreach ($alphabet as $letter) {
+            if ($coordinates[$i] == $letter) {
+                return false;
+            }
+        }
+    }
+
+    $arr = explode(' ', $coordinates);
+    $first_n = floatval($arr[0]);
+    $second_n = floatval($arr[1]);
+
+    if (count($arr) > 2 || count($arr) < 2 || $first_n < -90 || $first_n > 90 || $second_n < -180 || $second_n > 180 || substr_count($coordinates, '.') > 2 || substr_count($coordinates, ',') != 1) {
+        return false;
+    }
+    return true;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  97. Nato Words
+
+    >You'll have to translate a string to Pilot's alphabet (NATO phonetic alphabet).
+    wiki => https://en.wikipedia.org/wiki/NATO_phonetic_alphabet
+    EXAMPLE:
+        If you can read => India Foxtrot Yankee Oscar Uniform Charlie Alfa November Romeo Echo Alfa Delta
+    NOTES:
+        Keep the punctuation, and remove the spaces.
+        Use Xray without dash or space.
+        Although the proper alphabet for j is Juliett you have to use Juliet here
+*/
+
+
+// $words = 'If you can read';
+// $words = 'Did not see that coming';
+$words = 'go for it!';
+
+$funzione = to_nato($words);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function to_nato($words) {
+    $nato = [
+        'a' => 'Alfa',
+        'b' => 'Bravo',
+        'c' => 'Charlie',
+        'd' => 'Delta',
+        'e' => 'Echo',
+        'f' => 'Foxtrot',
+        'g' => 'Golf',
+        'h' => 'Hotel',
+        'i' => 'India',
+        'j' => 'Juliet',
+        'k' => 'Kilo',
+        'l' => 'Lima',
+        'm' => 'Mike',
+        'n' => 'November',
+        'o' => 'Oscar',
+        'p' => 'Papa',
+        'q' => 'Quebec',
+        'r' => 'Romeo',
+        's' => 'Sierra',
+        't' => 'Tango',
+        'u' => 'Uniform',
+        'v' => 'Victor',
+        'w' => 'Whiskey',
+        'x' => 'Xray',
+        'y' => 'Yankee',
+        'z' => 'Zulu'
+    ];
+
+    $words = strtolower(str_replace(' ', '', $words));
+    $arr = [];
+    for ($i = 0; $i < strlen($words); $i++) {
+        if ($nato[$words[$i]] === null) {
+            $arr[] = $words[$i];
+        } else {
+            $arr[] = $nato[$words[$i]];
+        }
+    }
+
+    return implode(' ', $arr);
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  98. Primorial Of a Number
+
+    >Given a number N , calculate its primorial.
+    Definition (Primorial Of a Number):
+    In primorial, not all the natural numbers get multiplied,
+    only prime numbers are multiplied to calculate the primorial of a number.
+    EXAMPLE:
+        1- numPrimorial (3) ==> return (30)         2 * 3 * 5 = 30 .
+        2- numPrimorial (5) ==> return (2310)       2 * 3 * 5 * 7 * 11 = 2310 .
+        3- numPrimorial (6) ==> return (30030)      2 * 3 * 5 * 7 * 11 * 13 = 30030 .
+    NOTES:
+        Only positive numbers will be passed (N > 0) .
+*/
+
+
+$n = 9;
+
+$funzione = numPrimorial($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function numPrimorial($n) {
+    $arr_prime = [2];
+
+    $last_prime = 2;
+
+    $i = $last_prime+1;
+    while (count($arr_prime) < $n) {
+        $not_found = true;
+
+        while ($not_found) {    // until a prime number is found
+            $not_prime = true;
+            for ($j = 2; $j < $i; $j++) {
+                if ($i % $j == 0) {
+                    $not_prime = false;
+                }
+            }
+
+            if ($not_prime) {
+                $last_prime = $i;
+                $arr_prime[] = $i;
+                $not_found = false;
+            }
+
+            $i++;
+        }
+    }
+
+    $num = 1;
+    foreach ($arr_prime as $n) {
+        $num *= $n;
+    }
+
+    return $num;
 }
 //-----------------------------------------------------------------------------------------------------
 
