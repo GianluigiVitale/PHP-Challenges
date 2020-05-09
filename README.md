@@ -119,3 +119,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 96. [Coordinates Validator](List%20Of%20Challenges/96.%20Coordinates%20Validator.php)
 97. [Nato Words](List%20Of%20Challenges/97.%20Nato%20Words.php)
 98. [Primorial Of a Number](List%20Of%20Challenges/98.%20Primorial%20Of%20a%20Number.php)
+99. [Sum of Two Integers Without +-](List%20Of%20Challenges/99.%20Sum%20of%20Two%20Integers%20Without%20+-.php)
+100. [Fruit Machine](List%20Of%20Challenges/100.%20Fruit%20Machine.php)
+101. [New Cashier Does Not Know About Space or Shift](List%20Of%20Challenges/101.%20New%20Cashier%20Does%20Not%20Know%20About%20Space%20or%20Shift.php)

@@ -4111,6 +4111,198 @@ function numPrimorial($n) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  99. Sum of Two Integers Without +-
+
+    >Given Two integers a , b , find The sum of them , BUT You are not allowed to use the operators + and -
+    EXAMPLE:
+        1- Add (5,19) ==> return (24)
+        2- Add (-27,18) ==> return (-9)
+        3- Add (-14,-16) ==> return (-30)
+    NOTES:
+        The numbers (a,b) may be positive , negative values or zeros .
+        Returning value will be an integer .
+        the following functions are prohibited:
+        array_sum, array_map, eval, exec, shell_exec, system, passthru,
+        proc_*, popen, bc*, gmp_*.
+        Additionally, calling functions using string interpolation is also banned,
+        i.e. ("func")() or $obj->{"func"}().
+*/
+
+
+$x = 30;
+$y = -90;
+
+$funzione = add($x, $y);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function add($x, $y) {
+    return round(log(pow(1.00000000000001, $x) * pow(1.00000000000001, $y), 1.00000000000001));
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  100. Fruit Machine
+
+    >Slot machine, informally fruit machine is a casino gambling machine with three
+    or more reels which spin when a button is pushed.
+
+    You will be given three reels of different images and told at which index the reels stop.
+    From this information your job is to return the score of the resulted reels.
+    Rules:
+ 	1. There are always exactly three reels
+    2. Each reel has 10 different items.
+    3. The three reel inputs may be different.
+    4. The spin array represents the index of where the reels finish.
+    5. The three spin inputs may be different
+    6. Three of the same is worth more than two of the same
+    7. Two of the same plus one "Wild" is double the score.
+    8. No matching items returns 0.
+
+    Scoring:
+    Item    Three of the same   Two of the same     Two of the same plus one Wild
+    Wild        100                 10                  N/A
+    Star        90                  9                   18
+    Bell        80                  8                   16
+    Shell       70                  7                   14
+    Seven       60                  6                   12
+    Cherry      50                  5                   10
+    Bar         40                  4                   8
+    King        30                  3                   6
+    Queen       20                  2                   4
+    Jack        10                  1                   2
+
+    Return an integer of the score.
+    EXAMPLE:
+        Initialise
+        reel1 = ["Wild","Star","Bell","Shell","Seven","Cherry","Bar","King","Queen","Jack"];
+        reel2 = ["Wild","Star","Bell","Shell","Seven","Cherry","Bar","King","Queen","Jack"];
+        reel3 = ["Wild","Star","Bell","Shell","Seven","Cherry","Bar","King","Queen","Jack"];
+        spin = [5,5,5];
+
+        result = fruit([reel1,reel2,reel3],spin);
+        Scoring
+        reel1[5] == "Cherry"
+        reel2[5] == "Cherry"
+        reel3[5] == "Cherry"
+
+        Cherry + Cherry + Cherry == 50
+    NOTES:
+*/
+
+
+$reel1 = ["Wild","Star","Bell","Shell","Seven","Cherry","Bar","King","Queen","Jack"];
+$reel2 = ["Bar", "Wild", "Queen", "Bell", "King", "Seven", "Cherry", "Jack", "Star", "Shell"];
+$reel3 = ["Bell", "King", "Wild", "Bar", "Seven", "Jack", "Shell", "Cherry", "Queen", "Star"];
+$spin = [5,4,3];
+
+
+$funzione = fruit([$reel1,$reel2,$reel3],$spin);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function fruit($reels, $spins) {
+    $score = [
+        "Wild" => 10,
+        "Star" => 9,
+        "Bell" => 8,
+        "Shell" => 7,
+        "Seven" => 6,
+        "Cherry" => 5,
+        "Bar" => 4,
+        "King" => 3,
+        "Queen" => 2,
+        "Jack" => 1,
+    ];
+
+    $first = $reels[0][$spins[0]];
+    $second = $reels[1][$spins[1]];
+    $third = $reels[2][$spins[2]];
+
+    if ($first == $second && $second == $third) {
+        return $score[$first] * 10;
+    } elseif ($first == $second) {
+        if ($third == "Wild") {
+            return $score[$first] * 2;
+        } else {
+            return $score[$first];
+        }
+    } elseif ($second == $third) {
+        if ($first == "Wild") {
+            return $score[$second] * 2;
+        } else {
+            return $score[$second];
+        }
+    } elseif ($third == $first) {
+        if ($second == "Wild") {
+            return $score[$third] * 2;
+        } else {
+            return $score[$third];
+        }
+    } elseif ($first != $second && $second != $third && $third != $first) {
+        return 0;
+    }
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  101. New Cashier Does Not Know About Space or Shift
+
+    >Some new cashiers started to work at your restaurant.
+    They are good at taking orders, but they don't know how to capitalize words, or use a space bar!
+    All the orders they create look something like this:
+    "milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza"
+
+    The kitchen staff are threatening to quit, because of how difficult it is to read the orders.
+    Their preference is to get the orders as a nice clean string with spaces and capitals like so:
+    "Burger Fries Chicken Pizza Pizza Pizza Sandwich Milkshake Milkshake Coke"
+
+    The kitchen staff expect the items to be in the same order as they appear in the menu.
+    The menu items are fairly simple, there is no overlap in the names of the items:
+    1. Burger
+    2. Fries
+    3. Chicken
+    4. Pizza
+    5. Sandwich
+    6. Onionrings
+    7. Milkshake
+    8. Coke
+    EXAMPLE:
+    NOTES:
+*/
+
+
+$input = "milkshakepizzachickenfriescokeburgerpizzasandwichmilkshakepizza";
+$input = "pizzachickenfriesburgercokemilkshakefriessandwich";
+
+$funzione = getOrder($input);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function getOrder($input) {
+    $phrase = str_replace(['burger', 'fries', 'chicken', 'pizza', 'sandwich', 'onionrings', 'milkshake', 'coke'],
+                        ['1Burger ', '2Fries ', '3Chicken ', '4Pizza ', '5Sandwich ', '6Onionrings ', '7Milkshake ', '8Coke '], // added a number to sort it easily later
+                        $input);
+
+    $arr = explode(' ', $phrase);
+    array_pop($arr);    // to remove the last space
+    sort($arr);
+    $new_orders = str_replace(['1','2','3','4','5','6','7','8'], '', implode(' ', $arr));   // to remove the numbers
+
+    return $new_orders;
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 
