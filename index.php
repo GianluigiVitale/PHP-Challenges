@@ -4303,6 +4303,199 @@ function getOrder($input) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  102. String average
+
+    >You are given a string of numbers between 0-9.
+    Find the average of these numbers and return it as a floored whole number
+    (ie: no decimal places) written out as a string
+    EXAMPLE:
+        "zero nine five two" -> "four"
+    NOTES:
+        If the string is empty or includes a number greater than 9, return "n/a"
+*/
+
+
+$s = "zero nine five two";
+
+$funzione = average_string($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function average_string($s) {
+    if (empty($s)) {
+        return "n/a";
+    }
+
+    $numbers = [
+        'zero' => 0,
+        'one' => 1,
+        'two' => 2,
+        'three' => 3,
+        'four' => 4,
+        'five' => 5,
+        'six' => 6,
+        'seven' => 7,
+        'eight' => 8,
+        'nine' => 9,
+    ];
+
+    $arr = explode(' ', $s);
+    $sum = 0;
+    foreach ($arr as $n) {
+        if ($numbers[$n] === null) {
+            return "n/a";
+        } else {
+            $sum += $numbers[$n];
+        }
+    }
+
+    $avg_n = floor($sum / count($arr));
+    $numbers = array_flip($numbers);
+
+    return $numbers[$avg_n];
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  103. Financing Plan on Planet XY140Z-n
+
+    >I need to save some money to buy a gift. I think I can do something like that:
+    First week (W0) I save nothing on Sunday, 1 on Monday, 2 on Tuesday... 6 on Saturday,
+    second week (W1) 2 on Monday... 7 on Saturday and so on according to the table below
+    where the days are numbered from 0 to 6.
+        --	Su	Mo	Tu	We	Th	Fr	Sa
+        W6							12
+        W5						10	11
+        W4					8	9	10
+        W3				6	7	8	9
+        W2			4	5	6	7	8
+        W1		2	3	4	5	6	7
+        W0	0	1	2	3	4	5	6
+    Can you tell me how much I will have for my gift on Saturday evening after I have saved 12?
+    (Your function finance(6) should return 168 which is the sum of the savings in the table).
+    Imagine now that we live on planet XY140Z-n where the days of the week are numbered from
+    0 to n (integer n > 0) and where I save from week number 0 to week number n included (in the table below n = 6).
+    How much money would I have at the end of my financing plan on planet XY140Z-n?
+    EXAMPLE:
+        finance(5) --> 105
+        finance(6) --> 168
+        finance(7) --> 252
+        finance(5000) --> 62537505000
+    NOTES:
+*/
+
+
+$n = 5000;
+
+$funzione = finance($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function finance($n) {
+    $sum = 0;
+
+    $start = 0;
+    $end = $n;
+
+    $number_of_loops = 0;
+    while ($number_of_loops <= $n) {
+        $sum += array_sum(range($start, $end));
+
+        $start += 2;
+        $end += 1;
+        $number_of_loops++;
+    }
+
+    return $sum;
+}
+// alternative method
+function finance($n) {
+    $sum = 0;
+
+    $start = 0;
+    $end = $n;
+
+    $number_of_loops = 0;
+    while ($number_of_loops <= $n) {
+        for ($i = $start; $i <= $end; $i++) {
+            $sum += $i;
+        }
+        $start += 2;
+        $end += 1;
+        $number_of_loops++;
+    }
+
+    return $sum;
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  104. Piano Kata, Part 1
+
+    >Consider a piano: http://tachyonlabs.com/miscimages/piano-keyboard-clipart.jpg
+    The keys go from 1 to 88 black or white
+    if I ask you to tell me which color the 90th key is you just have to start again
+    from the beginning...
+    Write a function which tells me which color is the key of the given number
+    EXAMPLE:
+        1     "white"
+        12    "black"
+        42    "white"
+        100   "black"
+        2017  "white"
+    NOTES:
+*/
+
+
+$keyPressCount = 12;
+
+$funzione = blackOrWhiteKey($keyPressCount);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function blackOrWhiteKey($keyPressCount) {
+    $color_key = [
+        '1' => 'white',
+        '2' => 'black',
+        '3' => 'white',
+    ];
+
+    for ($i = 1; $i <= 7; $i++) {   // to create the remaining values of the key of the piano
+        // this is the pattern that repeats all across the piano
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'black';
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'black';
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'black';
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'black';
+        $color_key[count($color_key)+1] = 'white';
+        $color_key[count($color_key)+1] = 'black';
+        $color_key[count($color_key)+1] = 'white';
+    }
+    $color_key[count($color_key)+1] = 'white';
+
+    $number = $keyPressCount;
+    while ($number - 88 > 0) {
+        $number -= 88;
+    }
+
+    return $color_key[$number];
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 
