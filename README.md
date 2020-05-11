@@ -13,7 +13,7 @@ _The challenges are organized in a chronological order_
 _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 
 ### Challenge names:
-###### 8kyu
+#### 8kyu
 1. [Multiply](List%20Of%20Challenges/1.%20Multiply.php)
 2. [Even or Odd](List%20Of%20Challenges/2.%20Even%20or%20Odd.php)
 3. [Sum of positive](List%20Of%20Challenges/3.%20Sum%20of%20positive.php)
@@ -42,7 +42,7 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 26. [Is the string uppercase](List%20Of%20Challenges/26.%20Is%20the%20string%20uppercase.php)
 27. [Find the Difference in Age between Oldest and Youngest Family Members](List%20Of%20Challenges/27.%20Find%20the%20Difference%20in%20Age%20between%20Oldest%20and%20Youngest%20Family%20Members.php)
 
-###### 7kyu
+#### 7kyu
 
 28. [Vowel Count](List%20Of%20Challenges/28.%20Vowel%20Count.php)
 29. [Mumbling](List%20Of%20Challenges/29.%20Mumbling.php)
@@ -69,7 +69,7 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 50. [Breaking chocolate problem](List%20Of%20Challenges/50.%20Breaking%20chocolate%20problem.php)
 51. [String ends with](List%20Of%20Challenges/51.%20String%20ends%20with.php)
 
-###### 6kyu
+#### 6kyu
 
 52. [Find the odd int](List%20Of%20Challenges/52.%20Find%20the%20odd%20int.php)
 53. [Multiples of 3 or 5](List%20Of%20Challenges/53.%20Multiples%20of%203%20or%205.php)
@@ -128,6 +128,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 106. [String transformer](List%20Of%20Challenges/106.%20String%20transformer.php)
 107. [Simple Fun #79 Delete a Digit](List%20Of%20Challenges/107.%20Simple%20fun%20%2379%20Delete%20a%20Digit.php)
 
-###### 5kyu
+#### 5kyu
 
 108. [Directions Reduction](List%20Of%20Challenges/108.%20Directions%20Reduction.php)
