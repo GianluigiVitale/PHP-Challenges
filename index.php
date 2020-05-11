@@ -4496,6 +4496,126 @@ function blackOrWhiteKey($keyPressCount) {
 }
 //-----------------------------------------------------------------------------------------------------
 
+//-----------------------------------------------------------------------------------------------------
+/*  105. Piano Kata, Part 2
+
+    >Consider a piano: http://tachyonlabs.com/miscimages/piano-keyboard-with-notes-clipart.jpg
+    The keys go from 1 to 88
+    if I ask you to tell me which note the 90th key is you just have to start again
+    from the beginning...
+    Write a function which tells me which note is the key of the given number
+    EXAMPLE:
+        1     "A"
+        12    "G#"
+        42    "D"
+        100   "G#"
+        2017  "F"
+    NOTES:
+*/
+
+
+$keyPressCount = 12;
+
+$funzione = whichNote($keyPressCount);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function whichNote($keyPressCount) {
+    return array("A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#")[($keyPressCount - 1) % 88 % 12];
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  106. String transformer
+
+    >Given a string, return a new string that has transformed based on the input:
+
+    Change case of every character, ie. lower case to upper case, upper case to lower case.
+    Reverse the order of words from the input.
+    EXAMPLE:
+        "Example Input" ==> "iNPUT eXAMPLE"
+    NOTES:
+*/
+
+
+$s = "Example string";
+
+$funzione = string_transformer($s);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function string_transformer($s) {
+    $arr = explode(' ', $s);
+
+    $n_arr = [];
+    foreach ($arr as $word) {
+        $new_word = '';
+        for ($i = 0; $i < strlen($word); $i++) {
+            $letter = $word[$i];
+            if ($letter == strtoupper($letter)) {
+                $new_word .= strtolower($letter);
+            } else {
+                $new_word .= strtoupper($letter);
+            }
+        }
+        $n_arr[] = $new_word;
+    }
+
+    return implode(' ', array_reverse($n_arr));
+}
+//-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+/*  107. Simple Fun #79 Delete a Digit
+
+    >Given an integer n, find the maximal number you can obtain by deleting exactly one digit of the given number.
+
+    [input] integer
+    [output] an integer
+    EXAMPLE:
+        For n = 152, the output should be 52;
+        For n = 1001, the output should be 101.
+    NOTES:
+        Constraints: 10 ≤ n ≤ 1000000.
+*/
+
+
+$n = 152;
+
+$funzione = deleteDigit($n);
+echo '<pre>';
+print_r($funzione);
+echo '</pre';
+
+
+
+function deleteDigit($n) {
+    $num_s = strval($n);
+    $arr = [];
+
+    $exception = 0;
+    while ($exception <= strlen($num_s)-1) {
+        $num = '';
+
+        for ($i = 0; $i < strlen($num_s); $i++) {
+            if ($i != $exception) {
+                $num .= $num_s[$i];
+            }
+        }
+        $arr[] = intval($num);
+        $exception++;
+    }
+
+    return max($arr);
+}
+//-----------------------------------------------------------------------------------------------------
+
 
 
 

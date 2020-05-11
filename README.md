@@ -125,3 +125,6 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 102. [String average](List%20Of%20Challenges/102.%20String%20average.php)
 103. [Financing Plan on Planet XY140Z-n](List%20Of%20Challenges/103.%20Financing%20Plan%20on%20Planet%20XY140Z-n.php)
 104. [Piano Kata, Part 1](List%20Of%20Challenges/104.%20Piano%20Kata,%20Part%201.php)
+105. [Piano Kata, Part 2](List%20Of%20Challenges/105.%20Piano%20Kata,%20Part%202.php)
+106. [String transformer](List%20Of%20Challenges/106.%20String%20transformer.php)
+107. [Simple Fun #79 Delete a Digit](List%20Of%20Challenges/107.%20Simple%20fun%20#79%20Delete%20a%20Digit.php)
