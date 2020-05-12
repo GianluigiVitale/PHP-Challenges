@@ -131,3 +131,5 @@ _' kyu ' is the difficulty: easiest 8kyu, hardest 1kyu_
 #### 5kyu
 
 108. [Directions Reduction](List%20Of%20Challenges/108.%20Directions%20Reduction.php)
+109. [Weight for weight](List%20Of%20Challenges/109.%20Weight%20for%20weight.php)
+110. [Where my anagrams at](List%20Of%20Challenges/110.%20Where%20my%20anagrams%20at.php)
