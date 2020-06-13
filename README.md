@@ -1,5 +1,5 @@
-#### The challenges are taken from codewars.com
-### CodeWars Profile Link: https://www.codewars.com/users/GianluigiVitale
+# 100+ PHP Solved challenges from codewars.com
+## CodeWars Profile Link: https://www.codewars.com/users/GianluigiVitale
 ***
 **To see my solution for a specific challenge just click it's name and you will be redirected to the file of the challenge.**   
 _For Example: to see my solution for the 10th challenge (Grasshopper - Summation) just click: Grasshopper - Summation_  
