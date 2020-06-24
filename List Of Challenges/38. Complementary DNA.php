@@ -23,14 +23,19 @@ echo '</pre';
 function DNA_strand($dna) {
     $new_string = '';
     for ($i = 0; $i < strlen($dna); $i++) {
-        if ($dna[$i] == 'T') {
-            $new_string .= 'A';
-        } elseif ($dna[$i] == 'A') {
-            $new_string .= 'T';
-        } elseif ($dna[$i] == 'C') {
-            $new_string .= 'G';
-        } elseif ($dna[$i] == 'G') {
-            $new_string .= 'C';
+        switch ($dna[$i]) {
+            case 'T':
+                $new_string .= 'A';
+                break;
+            case 'A':
+                $new_string .= 'T';
+                break;
+            case 'C':
+                $new_string .= 'G';
+                break;
+            case 'G':
+                $new_string .= 'C';
+                break;
         }
     }
 

@@ -19,9 +19,9 @@ function findShort($str) {
     $array_str = explode(' ', $str);
 
     $shortest_word = $array_str[0];
-    foreach ($array_str as $key => $value) {
-        if (strlen($value) < strlen($shortest_word)) {
-            $shortest_word = $value;
+    foreach ($array_str as $word) {
+        if (strlen($word) < strlen($shortest_word)) {
+            $shortest_word = $word;
         }
     }
 

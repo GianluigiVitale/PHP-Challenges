@@ -1018,11 +1018,41 @@ print_r($funzione);
 echo '</pre>';
 
 
-function highAndLow($numbers)
-{
+function highAndLow($numbers) {
     $array = explode(' ', $numbers);
     $max_number = max($array);
     $min_number = min($array);
+
+    return $max_number . ' ' . $min_number;
+}
+// alternative solution without using explode, max and min
+function highAndLow($numbers) {
+    $array = [];
+    $num = '';
+
+    for ($i = 0; $i < strlen($numbers); $i++) {
+        $i_num = $numbers[$i];
+
+        if ($i_num != " ") {
+            $num .= $i_num;
+        } else {
+            $array[] = intval($num);
+            $num = '';
+        }
+    }
+    $array[] = intval($num);
+
+
+    $max_number = $array[0];
+    $min_number = $array[0];
+
+    foreach ($array as $num) {
+        if ($num < $min_number) {
+            $min_number = $num;
+        } elseif ($num > $max_number) {
+            $max_number = $num;
+        }
+    }
 
     return $max_number . ' ' . $min_number;
 }
@@ -1080,9 +1110,9 @@ function findShort($str) {
     $array_str = explode(' ', $str);
 
     $shortest_word = $array_str[0];
-    foreach ($array_str as $key => $value) {
-        if (strlen($value) < strlen($shortest_word)) {
-            $shortest_word = $value;
+    foreach ($array_str as $word) {
+        if (strlen($word) < strlen($shortest_word)) {
+            $shortest_word = $word;
         }
     }
 
@@ -1116,7 +1146,7 @@ function XO($s) {
     $x_count = substr_count($s_lowercase, 'x');
     $o_count = substr_count($s_lowercase, 'o');
 
-    if ($x_count == 0 && $o_count == 0 || $x_count == $o_count) {
+    if ($x_count == $o_count) {
         return true;
     }
     return false;
@@ -1139,9 +1169,8 @@ function XO($s) {
 $string = 'Dermatoglyphics';
 
 $funzione = isIsogram($string);
-echo '<pre>';
-print_r($funzione);
-echo '</pre>';
+echo $funzione ? 'true' : 'false';
+
 
 function isIsogram($string) {
     $string_lowercase = strtolower($string);
@@ -1149,6 +1178,27 @@ function isIsogram($string) {
     for ($i = 0; $i < strlen($string); $i++) {
         $char_count = substr_count($string_lowercase, $string[$i]);
         if ($char_count > 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
+// alternative solution using associative array
+function isIsogram($string) {
+    $string_lowercase = strtolower($string);
+
+    $arr = [];
+    for ($i = 0; $i < strlen($string); $i++) {
+        if ($arr[$string_lowercase[$i]] === undefined) {
+            $arr[] = $arr[$string_lowercase[$i]];
+        }
+
+        $arr[$string_lowercase[$i]] += 1;
+    }
+
+    foreach ($arr as $value) {
+        if ($value > 1) {
             return false;
         }
     }
@@ -1174,9 +1224,23 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
-function capitalize($string)
-{
+
+function capitalize($string) {
     return ucwords($string);
+}
+// alternative solution without using ucwords
+function capitalize($string) {
+    $new_s = '';
+
+    for ($i = 0; $i < strlen($string); $i++) {
+        if ($string[$i-1] == " ") {
+            $new_s .= strtoupper($string[$i]);
+        } else {
+            $new_s .= $string[$i];
+        }
+    }
+
+    return $new_s;
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -1254,14 +1318,19 @@ echo '</pre>';
 function DNA_strand($dna) {
     $new_string = '';
     for ($i = 0; $i < strlen($dna); $i++) {
-        if ($dna[$i] == 'T') {
-            $new_string .= 'A';
-        } elseif ($dna[$i] == 'A') {
-            $new_string .= 'T';
-        } elseif ($dna[$i] == 'C') {
-            $new_string .= 'G';
-        } elseif ($dna[$i] == 'G') {
-            $new_string .= 'C';
+        switch ($dna[$i]) {
+            case 'T':
+                $new_string .= 'A';
+                break;
+            case 'A':
+                $new_string .= 'T';
+                break;
+            case 'C':
+                $new_string .= 'G';
+                break;
+            case 'G':
+                $new_string .= 'C';
+                break;
         }
     }
 
@@ -1272,7 +1341,7 @@ function DNA_strand($dna) {
 //-----------------------------------------------------------------------------------------------------
     /* 39. Two to One
 
-        >Take 2 strings s1 and s2 including only letters from ato z.
+        >Take 2 strings s1 and s2 including only letters from a to z.
          Return a new sorted string, the longest possible, containing distinct letters,
          each taken only once - coming from s1 or s2.
         EXAMPLE:
@@ -1299,9 +1368,10 @@ function longest($a, $b) {
 
     return implode('', $array);
 }
-// another solution
+// another solution without using array unique
 function longest($a, $b) {
     $total_string = $a + $b;
+    
     $new_string = '';
     for ($i = 0; $i < strlen($total_string); $i++) {
         if (!strpos($new_string, $total_string[$i])) {

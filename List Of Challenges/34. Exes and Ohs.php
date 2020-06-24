@@ -24,7 +24,7 @@ function XO($s) {
     $x_count = substr_count($s_lowercase, 'x');
     $o_count = substr_count($s_lowercase, 'o');
 
-    if ($x_count == 0 && $o_count == 0 || $x_count == $o_count) {
+    if ($x_count == $o_count) {
         return true;
     }
     return false;

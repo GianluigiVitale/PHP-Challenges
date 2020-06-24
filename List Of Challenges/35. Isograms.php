@@ -14,9 +14,8 @@
 $string = 'Dermatoglyphics';
 
 $funzione = isIsogram($string);
-echo '<pre>';
-print_r($funzione);
-echo '</pre';
+echo $funzione ? 'true' : 'false';
+
 
 function isIsogram($string) {
     $string_lowercase = strtolower($string);
@@ -24,6 +23,27 @@ function isIsogram($string) {
     for ($i = 0; $i < strlen($string); $i++) {
         $char_count = substr_count($string_lowercase, $string[$i]);
         if ($char_count > 1) {
+            return false;
+        }
+    }
+
+    return true;
+}
+// alternative solution using associative array
+function isIsogram($string) {
+    $string_lowercase = strtolower($string);
+
+    $arr = [];
+    for ($i = 0; $i < strlen($string); $i++) {
+        if ($arr[$string_lowercase[$i]] === undefined) {
+            $arr[] = $arr[$string_lowercase[$i]];
+        }
+
+        $arr[$string_lowercase[$i]] += 1;
+    }
+
+    foreach ($arr as $value) {
+        if ($value > 1) {
             return false;
         }
     }

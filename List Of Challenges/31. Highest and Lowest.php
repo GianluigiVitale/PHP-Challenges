@@ -20,11 +20,41 @@ print_r($funzione);
 echo '</pre';
 
 
-function highAndLow($numbers)
-{
+function highAndLow($numbers) {
     $array = explode(' ', $numbers);
     $max_number = max($array);
     $min_number = min($array);
+
+    return $max_number . ' ' . $min_number;
+}
+// alternative solution without using explode, max and min
+function highAndLow($numbers) {
+    $array = [];
+    $num = '';
+
+    for ($i = 0; $i < strlen($numbers); $i++) {
+        $i_num = $numbers[$i];
+
+        if ($i_num != " ") {
+            $num .= $i_num;
+        } else {
+            $array[] = intval($num);
+            $num = '';
+        }
+    }
+    $array[] = intval($num);
+
+
+    $max_number = $array[0];
+    $min_number = $array[0];
+
+    foreach ($array as $num) {
+        if ($num < $min_number) {
+            $min_number = $num;
+        } elseif ($num > $max_number) {
+            $max_number = $num;
+        }
+    }
 
     return $max_number . ' ' . $min_number;
 }

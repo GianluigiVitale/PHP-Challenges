@@ -15,8 +15,22 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
-function capitalize($string)
-{
+
+function capitalize($string) {
     return ucwords($string);
+}
+// alternative solution without using ucwords
+function capitalize($string) {
+    $new_s = '';
+
+    for ($i = 0; $i < strlen($string); $i++) {
+        if ($string[$i-1] == " ") {
+            $new_s .= strtoupper($string[$i]);
+        } else {
+            $new_s .= $string[$i];
+        }
+    }
+
+    return $new_s;
 }
 ?>
