@@ -23,4 +23,8 @@ echo '</pre';
 function stringToNumber($str) {
     return (int)$str;
 }
+// alternative solution
+function stringToNumber($str) {
+    return intval($str);
+}
 ?>

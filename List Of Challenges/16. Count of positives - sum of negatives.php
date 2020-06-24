@@ -24,11 +24,11 @@ function countPositivesSumNegatives($input) {
 
     $count_positive = 0;
     $sum_negative = 0;
-    foreach ($input as $key => $value) {
-        if ($value > 0) {
+    foreach ($input as $num) {
+        if ($num > 0) {
             $count_positive += 1;
         } else {
-            $sum_negative += $value;
+            $sum_negative += $num;
         }
     }
 

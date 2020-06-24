@@ -18,8 +18,11 @@ print_r($funzione);
 echo '</pre';
 
 
-function numberToString($num)
-{
+function numberToString($num) {
     return strval($num);
+}
+// alternative solution
+function numberToString($num) {
+    return (string)$num;
 }
 ?>

@@ -15,18 +15,19 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
 function positive_sum($arr) {
     if (empty($arr)) {
         return 0;
-    } else {
-        $sum = 0;
-        foreach ($arr as $key => $value) {
-            if ($value > 0) {
-                $sum += $value;
-            }
-        }
-
-        return $sum;
     }
+
+    $sum = 0;
+    foreach ($arr as $num) {
+        if ($num > 0) {
+            $sum += $num;
+        }
+    }
+
+    return $sum;
 }
 ?>

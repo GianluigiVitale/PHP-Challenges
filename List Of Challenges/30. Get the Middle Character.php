@@ -21,12 +21,14 @@ echo '</pre';
 
 
 function getMiddle($text) {
+    $text_middle_char = strlen($text) / 2;
+
     $middle_char = '';
 
     if (strlen($text) % 2 == 0) {
-        $middle_char = $text[strlen($text) / 2 - 1] . $text[strlen($text) / 2];
+        $middle_char = $text[$text_middle_char - 1] . $text[$text_middle_char];
     } else {
-        $middle_char = $text[floor(strlen($text) / 2)];
+        $middle_char = $text[floor($text_middle_char)];
     }
 
     return $middle_char;

@@ -13,7 +13,20 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
 function no_space(string $s): string {
     return str_replace(' ', '', $s);
+}
+// without str_replace
+function no_space(string $s): string {
+    $new_s = '';
+
+    for ($i = 0; $i < strlen($s); $i++) {
+        if ($s[$i] != " ") {
+            $new_s .= $s[$i];
+        }
+    }
+
+    return $new_s;
 }
 ?>

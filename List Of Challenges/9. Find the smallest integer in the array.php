@@ -16,12 +16,17 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
+function smallestInteger($arr) {
+    return min($arr);
+}
+// without using min
 function smallestInteger($arr) {
     $smallest_number = $arr[0];
 
-    foreach ($arr as $key => $value) {
-        if ($value < $smallest_number) {
-            $smallest_number = $value;
+    foreach ($arr as $num) {
+        if ($num < $smallest_number) {
+            $smallest_number = $num;
         }
     }
 

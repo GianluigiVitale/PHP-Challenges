@@ -20,8 +20,8 @@ function getCount($str) {
     $vowelsCount = 0;
     $vowels = ['a', 'e', 'i', 'o', 'u'];
 
-    foreach ($vowels as $key => $value) {
-        $vowelsCount += substr_count($str, $value);
+    foreach ($vowels as $vowel) {
+        $vowelsCount += substr_count($str, $vowel);
     }
 
     return $vowelsCount;

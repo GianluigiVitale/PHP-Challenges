@@ -14,7 +14,18 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
 function remove_char(string $s): string {
     return substr($s, 1, -1);
+}
+// without substr
+function remove_char(string $s): string {
+    $new_s = '';
+
+    for ($i = 1; $i < strlen($s) - 1; $i++) {
+        $new_s .= $s[$i];
+    }
+
+    return $new_s;
 }
 ?>

@@ -13,6 +13,12 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
+
+function boolToWord($bool) {
+    return ($bool) ? 'Yes' : 'No';
+}
+// without ternary operator
 function boolToWord($bool) {
     if ($bool === true) {
         return 'Yes';

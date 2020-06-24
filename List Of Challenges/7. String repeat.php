@@ -16,8 +16,8 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
-function repeatStr($n, $str)
-{
+
+function repeatStr($n, $str) {
     $new_string = '';
     for ($i = 1; $i <= $n; $i++) {
         $new_string .= $str;

@@ -18,6 +18,11 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
+function summation($n) {
+    return ($n * ($n + 1)) / 2;
+}
+// without using gauss formula
 function summation($n) {
     $sum = 0;
 

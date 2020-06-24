@@ -17,7 +17,8 @@ echo '</pre';
 function solution($str) {
     return strrev($str);
 }
-function solution($str) {   // another way
+// without using strrev
+function solution($str) {
     $reversed_string = '';
 
     for ($i = strlen($str); $i >= 0; $i--) {

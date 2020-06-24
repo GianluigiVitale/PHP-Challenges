@@ -37,6 +37,11 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
+function even_or_odd(int $n): string {
+    return ($n % 2 == 0) ? 'Even' : 'Odd';
+}
+// alternative solution
 function even_or_odd(int $n): string {
     if ($n % 2 == 0) {
         return 'Even';
@@ -63,19 +68,20 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
 function positive_sum($arr) {
     if (empty($arr)) {
         return 0;
-    } else {
-        $sum = 0;
-        foreach ($arr as $key => $value) {
-            if ($value > 0) {
-                $sum += $value;
-            }
-        }
-
-        return $sum;
     }
+
+    $sum = 0;
+    foreach ($arr as $num) {
+        if ($num > 0) {
+            $sum += $num;
+        }
+    }
+
+    return $sum;
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -118,8 +124,19 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
 function remove_char(string $s): string {
     return substr($s, 1, -1);
+}
+// without substr
+function remove_char(string $s): string {
+    $new_s = '';
+
+    for ($i = 1; $i < strlen($s) - 1; $i++) {
+        $new_s .= $s[$i];
+    }
+
+    return $new_s;
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -145,6 +162,11 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
+function makeNegative(float $num) : float {
+    return ($num <= 0) ? $num : $num * -1;
+}
+// alternative solution
 function makeNegative(float $num) : float {
     if ($num <= 0) {
         return $num;
@@ -172,8 +194,8 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
-function repeatStr($n, $str)
-{
+
+function repeatStr($n, $str) {
     $new_string = '';
     for ($i = 1; $i <= $n; $i++) {
         $new_string .= $str;
@@ -198,8 +220,21 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
 function no_space(string $s): string {
     return str_replace(' ', '', $s);
+}
+// without str_replace
+function no_space(string $s): string {
+    $new_s = '';
+
+    for ($i = 0; $i < strlen($s); $i++) {
+        if ($s[$i] != " ") {
+            $new_s .= $s[$i];
+        }
+    }
+
+    return $new_s;
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -221,12 +256,17 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
+function smallestInteger($arr) {
+    return min($arr);
+}
+// without using min
 function smallestInteger($arr) {
     $smallest_number = $arr[0];
 
-    foreach ($arr as $key => $value) {
-        if ($value < $smallest_number) {
-            $smallest_number = $value;
+    foreach ($arr as $num) {
+        if ($num < $smallest_number) {
+            $smallest_number = $num;
         }
     }
 
@@ -254,6 +294,11 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
+function summation($n) {
+    return ($n * ($n + 1)) / 2;
+}
+// without using gauss formula
 function summation($n) {
     $sum = 0;
 
@@ -280,6 +325,12 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre>';
 
+
+
+function boolToWord($bool) {
+    return ($bool) ? 'Yes' : 'No';
+}
+// without ternary operator
 function boolToWord($bool) {
     if ($bool === true) {
         return 'Yes';
@@ -308,7 +359,8 @@ echo '</pre>';
 function solution($str) {
     return strrev($str);
 }
-function solution($str) {   // another way
+// without using strrev
+function solution($str) {
     $reversed_string = '';
 
     for ($i = strlen($str); $i >= 0; $i--) {
@@ -341,15 +393,12 @@ print_r($funzione);
 echo '</pre>';
 
 
-function centuryFromYear($year)
-{
+function centuryFromYear($year) {
     $year_to_string = strval($year);
 
     if ($year_to_string[strlen($year_to_string)-1] > 0 || $year_to_string[strlen($year_to_string)-2] > 0) { // if either the last digit or the one before is greater than 0
-        $number_minus_2digits = substr($year, 0, -2);
-        $century = $number_minus_2digits += 1;
 
-        return $century;
+        return substr($year, 0, -2) + 1;        // I return all the digits but the last two plus one
     }
 
     return substr($year, 0, -2);
@@ -416,9 +465,12 @@ print_r($funzione);
 echo '</pre>';
 
 
-function numberToString($num)
-{
+function numberToString($num) {
     return strval($num);
+}
+// alternative solution
+function numberToString($num) {
+    return (string)$num;
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -448,11 +500,11 @@ function countPositivesSumNegatives($input) {
 
     $count_positive = 0;
     $sum_negative = 0;
-    foreach ($input as $key => $value) {
-        if ($value > 0) {
+    foreach ($input as $num) {
+        if ($num > 0) {
             $count_positive += 1;
         } else {
-            $sum_negative += $value;
+            $sum_negative += $num;
         }
     }
 
@@ -497,7 +549,7 @@ function findNeedle($haystack) {
 //-----------------------------------------------------------------------------------------------------
     /* 18. Square(n) Sum
 
-        >Create a funciton so that it squares each number passed into it and then sums the results together.
+        >Create a function so that it squares each number passed into it and then sums the results together.
         EXAMPLE:
             given [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
         NOTES:
@@ -513,8 +565,8 @@ echo '</pre>';
 
 function square_sum($numbers) : int {
     $square_sum = 0;
-    foreach ($numbers as $key => $value) {
-        $square_sum += pow($value, 2);
+    foreach ($numbers as $num) {
+        $square_sum += pow($num, 2);
     }
 
     return $square_sum;
@@ -565,11 +617,10 @@ print_r($funzione);
 echo '</pre>';
 
 
-function maps($x)
-{
+function maps($x) {
     $array_doubled = [];
-    foreach ($x as $key => $value) {
-        $array_doubled[] = $value * 2;
+    foreach ($x as $num) {
+        $array_doubled[] = $num * 2;
     }
 
     return $array_doubled;
@@ -600,6 +651,10 @@ echo '</pre>';
 
 function stringToNumber($str) {
     return (int)$str;
+}
+// alternative solution
+function stringToNumber($str) {
+    return intval($str);
 }
 //-----------------------------------------------------------------------------------------------------
 
@@ -682,9 +737,9 @@ function expressionMatter($a, $b, $c) {
         '6' => $a * ($b + $c),
     ];
 
-    foreach ($tries as $key => $value) {
-        if ($value > $maximum_number) {
-            $maximum_number = $value;
+    foreach ($tries as $num) {
+        if ($num > $maximum_number) {
+            $maximum_number = $num;
         }
     }
 
@@ -724,9 +779,9 @@ function removeEveryOther($array) {
 //-----------------------------------------------------------------------------------------------------
     /* 25. Number of characters
 
-        >Create a function called that accepts 2 string arguments
-            and returns an integer of the count of occurrences the 2nd argument is found in the first one.
-            If no occurrences can be found, a count of 0 should be returned.
+        >Create a function called strCount that accepts 2 string arguments
+        and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+        If no occurrences can be found, a count of 0 should be returned.
         EXAMPLE:
             strCount('Hello', 'o') // => 1
             strCount('Hello', 'l') // => 2
@@ -748,7 +803,8 @@ echo '</pre>';
 function strCount($str, $letter) {
     return substr_count($str, $letter);
 }
-function strCount($str, $letter) {  // another way
+// without using substr_count
+function strCount($str, $letter) {
     $count = 0;
     for ($i = 0; $i < strlen($str); $i++) {
         if ($str[$i] == $letter) {
@@ -811,15 +867,19 @@ echo '</pre>';
 
 
 function differenceInAges($ages) {
+    return [min($ages), max($ages), max($ages) - min($ages)];
+}
+// alternative solution without using min max
+function differenceInAges($ages) {
     $youngest = $ages[0];
     $oldest = $ages[0];
     $difference_age = 0;
 
-    foreach ($ages as $key => $value) {
-        if ($value < $youngest) {
-            $youngest = $value;
-        } elseif ($value > $oldest) {
-            $oldest = $value;
+    foreach ($ages as $age) {
+        if ($age < $youngest) {
+            $youngest = $age;
+        } elseif ($age > $oldest) {
+            $oldest = $age;
         }
     }
     $difference_age = $oldest - $youngest;
@@ -852,8 +912,8 @@ function getCount($str) {
     $vowelsCount = 0;
     $vowels = ['a', 'e', 'i', 'o', 'u'];
 
-    foreach ($vowels as $key => $value) {
-        $vowelsCount += substr_count($str, $value);
+    foreach ($vowels as $vowel) {
+        $vowelsCount += substr_count($str, $vowel);
     }
 
     return $vowelsCount;
@@ -886,7 +946,7 @@ function accum($s) {
     for ($i = 0; $i < strlen($s); $i++) {
         $new_string .= strtoupper($s[$i]);
 
-        for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char - 1 (-1 because the first uppercase char is already added)
+        for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char
             $new_string .= strtolower($s[$i]);
         }
 
@@ -922,12 +982,14 @@ echo '</pre>';
 
 
 function getMiddle($text) {
+    $text_middle_char = strlen($text) / 2;
+
     $middle_char = '';
 
     if (strlen($text) % 2 == 0) {
-        $middle_char = $text[strlen($text) / 2 - 1] . $text[strlen($text) / 2];
+        $middle_char = $text[$text_middle_char - 1] . $text[$text_middle_char];
     } else {
-        $middle_char = $text[floor(strlen($text) / 2)];
+        $middle_char = $text[floor($text_middle_char)];
     }
 
     return $middle_char;

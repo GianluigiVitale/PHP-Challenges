@@ -24,7 +24,7 @@ function accum($s) {
     for ($i = 0; $i < strlen($s); $i++) {
         $new_string .= strtoupper($s[$i]);
 
-        for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char - 1 (-1 because the first uppercase char is already added)
+        for ($j = 0; $j < $i; $j++) {   // to add as many char as the index of the char
             $new_string .= strtolower($s[$i]);
         }
 

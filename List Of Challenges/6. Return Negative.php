@@ -20,6 +20,11 @@ echo '<pre>';
 print_r($funzione);
 echo '</pre';
 
+
+function makeNegative(float $num) : float {
+    return ($num <= 0) ? $num : $num * -1;
+}
+// alternative solution
 function makeNegative(float $num) : float {
     if ($num <= 0) {
         return $num;

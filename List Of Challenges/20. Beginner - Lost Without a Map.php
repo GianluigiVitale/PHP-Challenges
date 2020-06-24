@@ -16,11 +16,10 @@ print_r($funzione);
 echo '</pre';
 
 
-function maps($x)
-{
+function maps($x) {
     $array_doubled = [];
-    foreach ($x as $key => $value) {
-        $array_doubled[] = $value * 2;
+    foreach ($x as $num) {
+        $array_doubled[] = $num * 2;
     }
 
     return $array_doubled;

@@ -20,15 +20,12 @@ print_r($funzione);
 echo '</pre';
 
 
-function centuryFromYear($year)
-{
+function centuryFromYear($year) {
     $year_to_string = strval($year);
 
     if ($year_to_string[strlen($year_to_string)-1] > 0 || $year_to_string[strlen($year_to_string)-2] > 0) { // if either the last digit or the one before is greater than 0
-        $number_minus_2digits = substr($year, 0, -2);
-        $century = $number_minus_2digits += 1;
 
-        return $century;
+        return substr($year, 0, -2) + 1;        // I return all the digits but the last two plus one
     }
 
     return substr($year, 0, -2);

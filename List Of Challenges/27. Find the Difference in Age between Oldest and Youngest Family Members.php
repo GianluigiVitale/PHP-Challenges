@@ -19,15 +19,19 @@ echo '</pre';
 
 
 function differenceInAges($ages) {
+    return [min($ages), max($ages), max($ages) - min($ages)];
+}
+// alternative solution without using min max
+function differenceInAges($ages) {
     $youngest = $ages[0];
     $oldest = $ages[0];
     $difference_age = 0;
 
-    foreach ($ages as $key => $value) {
-        if ($value < $youngest) {
-            $youngest = $value;
-        } elseif ($value > $oldest) {
-            $oldest = $value;
+    foreach ($ages as $age) {
+        if ($age < $youngest) {
+            $youngest = $age;
+        } elseif ($age > $oldest) {
+            $oldest = $age;
         }
     }
     $difference_age = $oldest - $youngest;

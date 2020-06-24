@@ -1,7 +1,7 @@
 <?php
 /* 18. Square(n) Sum
 
-    >Create a funciton so that it squares each number passed into it and then sums the results together.
+    >Create a function so that it squares each number passed into it and then sums the results together.
     EXAMPLE:
         given [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
     NOTES:
@@ -17,8 +17,8 @@ echo '</pre';
 
 function square_sum($numbers) : int {
     $square_sum = 0;
-    foreach ($numbers as $key => $value) {
-        $square_sum += pow($value, 2);
+    foreach ($numbers as $num) {
+        $square_sum += pow($num, 2);
     }
 
     return $square_sum;

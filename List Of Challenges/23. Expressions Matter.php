@@ -41,9 +41,9 @@ function expressionMatter($a, $b, $c) {
         '6' => $a * ($b + $c),
     ];
 
-    foreach ($tries as $key => $value) {
-        if ($value > $maximum_number) {
-            $maximum_number = $value;
+    foreach ($tries as $num) {
+        if ($num > $maximum_number) {
+            $maximum_number = $num;
         }
     }
 
