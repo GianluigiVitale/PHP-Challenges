@@ -35,9 +35,9 @@ echo '</pre';
 function number($bus_stops) {
     $people_on_bus = 0;
 
-    foreach ($bus_stops as $key => $value) {
-        $people_on_bus += $value[0];
-        $people_on_bus -= $value[1];
+    foreach ($bus_stops as $num_people) {
+        $people_on_bus += $num_people[0];
+        $people_on_bus -= $num_people[1];
     }
 
     return $people_on_bus;

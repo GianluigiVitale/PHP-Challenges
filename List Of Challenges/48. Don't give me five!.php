@@ -26,7 +26,7 @@ echo '</pre';
 function dont_give_me_five($start, $end) {
     $total_numbers = 0;
     for ($i = $start; $i <= $end; $i++) {
-        if (substr_count(strval($i), 5) == 0) {
+        if (substr_count(strval($i), '5') == 0) {
             $total_numbers++;
         }
     }

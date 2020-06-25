@@ -17,8 +17,17 @@ print_r($funzione);
 echo '</pre';
 
 
-function stray($arr)
-{
+function stray($arr) {
+    $values = array_count_values($arr);
+
+    foreach ($values as $key => $value) {
+        if ($value == 1) {
+            return $key;
+        }
+    }
+}
+// alternative solution without using array_count_values
+function stray($arr) {
     $number_1 = [$arr[0], 0];   // index 0 is the number index 1 how many times it is in the array
     $number_2 = [];             // index 0 is the number index 1 how many times it is in the array
 

@@ -22,7 +22,7 @@ function reverseWords($str) {
     $array = explode(' ', $str);
 
     $reverse_array = [];
-    foreach ($array as $key => $word) {
+    foreach ($array as $word) {
         $reverse_array[] = strrev($word);
     }
     $new_string = implode(' ', $reverse_array);

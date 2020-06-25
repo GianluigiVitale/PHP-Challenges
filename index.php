@@ -1371,7 +1371,7 @@ function longest($a, $b) {
 // another solution without using array unique
 function longest($a, $b) {
     $total_string = $a + $b;
-    
+
     $new_string = '';
     for ($i = 0; $i < strlen($total_string); $i++) {
         if (!strpos($new_string, $total_string[$i])) {
@@ -1568,9 +1568,9 @@ echo '</pre>';
 function number($bus_stops) {
     $people_on_bus = 0;
 
-    foreach ($bus_stops as $key => $value) {
-        $people_on_bus += $value[0];
-        $people_on_bus -= $value[1];
+    foreach ($bus_stops as $num_people) {
+        $people_on_bus += $num_people[0];
+        $people_on_bus -= $num_people[1];
     }
 
     return $people_on_bus;
@@ -1683,7 +1683,7 @@ function reverseWords($str) {
     $array = explode(' ', $str);
 
     $reverse_array = [];
-    foreach ($array as $key => $word) {
+    foreach ($array as $word) {
         $reverse_array[] = strrev($word);
     }
     $new_string = implode(' ', $reverse_array);
@@ -1715,6 +1715,10 @@ print_r($funzione);
 echo '</pre>';
 
 
+function odd_or_even(array $a): string {
+    return (array_sum($a) % 2 == 0) ? 'even' : 'odd';
+}
+// alternative solution without using array sum and ternary operator
 function odd_or_even(array $a): string {
     $sum = 0;
     foreach ($a as $key => $number) {
@@ -1756,7 +1760,7 @@ echo '</pre>';
 function dont_give_me_five($start, $end) {
     $total_numbers = 0;
     for ($i = $start; $i <= $end; $i++) {
-        if (substr_count(strval($i), 5) == 0) {
+        if (substr_count(strval($i), '5') == 0) {
             $total_numbers++;
         }
     }
@@ -1785,8 +1789,17 @@ print_r($funzione);
 echo '</pre>';
 
 
-function stray($arr)
-{
+function stray($arr) {
+    $values = array_count_values($arr);
+
+    foreach ($values as $key => $value) {
+        if ($value == 1) {
+            return $key;
+        }
+    }
+}
+// alternative solution without using array_count_values
+function stray($arr) {
     $number_1 = [$arr[0], 0];   // index 0 is the number index 1 how many times it is in the array
     $number_2 = [];             // index 0 is the number index 1 how many times it is in the array
 

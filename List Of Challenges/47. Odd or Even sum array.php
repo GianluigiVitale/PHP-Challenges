@@ -22,6 +22,10 @@ echo '</pre';
 
 
 function odd_or_even(array $a): string {
+    return (array_sum($a) % 2 == 0) ? 'even' : 'odd';
+}
+// alternative solution without using array sum and ternary operator
+function odd_or_even(array $a): string {
     $sum = 0;
     foreach ($a as $key => $number) {
         $sum += $number;
